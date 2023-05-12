@@ -9,9 +9,11 @@ import Foundation
 
 struct CredentialController {
     
-    var isLoggedIn: Bool = false
+    var isLoggedIn:Bool = false
     
-    var credentials: [String: String] = ["admin": "notAdmin69"]
+    private var loggedInUser: User?
+    
+    private var credentials: [String: String] = ["Admin": "noobMaster69"]
     
     mutating func addCredentials(_ credentials: User) {
         self.credentials[credentials.username] = credentials.password
@@ -34,5 +36,15 @@ struct CredentialController {
         
     }
     
+    func verifyCredentials(verifyUser user: User) -> Bool {
+        
+        guard let storedUser = credentials[user.username] else { return false }
+        
+        return storedUser == user.password
+        
+    }
     
+    mutating func setUserLoggedIn(user: User) {
+        loggedInUser = user
+    }
 }

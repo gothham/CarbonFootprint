@@ -19,7 +19,13 @@ class LoginController {
             if let username = logicView.promptForUsername(),
                let password = logicView.promptPassword() {
                 let user = User(username: username, password: password)
-                // TODO: check for user and login!
+                if credentialController.verifyCredentials(verifyUser: user) {
+                    print("Logged in successfully")
+                    credentialController.isLoggedIn = true
+                    credentialController.setUserLoggedIn(user: user)
+                } else {
+                    print("Invalid username or pasword! 👾")
+                }
                 
             }
         }
@@ -34,7 +40,11 @@ class LoginController {
            let password = logicView.promptCreatePassword() {
             let newUser = User(username: username, password: password)
             credentailController.addCredentials(newUser)
+            logicView.showSuccessMessage(message: "User created successfully.\nSign In")
             print(credentailController.getAllCredentials())
+            loginUser()
+        } else {
+            print("[Error message 👾!] Failed to create user.")
         }
         
     }
@@ -52,7 +62,7 @@ extension LoginController {
             let option = LoginOption(rawValue: selectedOption) {
             handleLoginOption(selectedOption: option)
             } else {
-                print("Erroe message 🦥 - Invalid output.")
+                print("[Error message 👾!] Invalid output.")
             }
     }
     

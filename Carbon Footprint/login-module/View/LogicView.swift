@@ -19,8 +19,8 @@ struct LogicView {
         return readLine()
     }
     
-    func showSuccessMessage() {
-        print("Logged in successfully!")
+    func showSuccessMessage(message: String) {
+        print(message)
     }
     
     func showErrorMessage() {
