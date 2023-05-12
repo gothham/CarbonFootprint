@@ -9,24 +9,18 @@ import Foundation
 
 class LoginController {
     
-    private let validUser: User = User(username: "admin", password: "password")
-    
     func loginUser() {
         
-        var loggedIn: Bool = false
         let logicView = LogicView()
+        var credentialController = CredentialController()
         
-        while !loggedIn {
+        
+        while !credentialController.isLoggedIn {
             if let username = logicView.promptForUsername(),
                let password = logicView.promptPassword() {
                 let user = User(username: username, password: password)
+                // TODO: check for user and login!
                 
-                if user.username == validUser.username && user.password == validUser.password {
-                    logicView.showSuccessMessage()
-                    loggedIn = true
-                } else {
-                    logicView.showErrorMessage()
-                }
             }
         }
     }
@@ -44,4 +38,35 @@ class LoginController {
         }
         
     }
+}
+
+extension LoginController {
+    
+    func displayLoginMenu() {
+        print("1. Create account.")
+        print("2. Already have an account? Login now.")
+        
+        // accepting user input
+        if let userInput = readLine(),
+         let selectedOption = Int(userInput),
+            let option = LoginOption(rawValue: selectedOption) {
+            handleLoginOption(selectedOption: option)
+            } else {
+                print("Erroe message 🦥 - Invalid output.")
+            }
+    }
+    
+    func handleLoginOption(selectedOption option: LoginOption) {
+        
+        switch option {
+        case .createAccount:
+            print("Taking to create user portal 👋.")
+            createUser()
+        case .login:
+            print("Taking to login portal 👋.")
+            loginUser()
+        }
+        
+    }
+    
 }

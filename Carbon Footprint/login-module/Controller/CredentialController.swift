@@ -11,7 +11,7 @@ struct CredentialController {
     
     var isLoggedIn: Bool = false
     
-    var credentials: [String: String] = [:]
+    var credentials: [String: String] = ["admin": "notAdmin69"]
     
     mutating func addCredentials(_ credentials: User) {
         self.credentials[credentials.username] = credentials.password

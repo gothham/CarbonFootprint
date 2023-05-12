@@ -9,6 +9,6 @@ import Foundation
 
 let viewFlow = ViewFlow()
 let test = LoginController()
-test.createUser()
+test.displayLoginMenu()
 //viewFlow.run()
 

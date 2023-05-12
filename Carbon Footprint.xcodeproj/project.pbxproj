@@ -16,6 +16,7 @@
 		554625DD2A0D15760029A1C9 /* CFCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625DC2A0D15760029A1C9 /* CFCalculatorController.swift */; };
 		554625E02A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625DF2A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift */; };
 		55854C612A0E12F400D00A88 /* CredentialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55854C602A0E12F400D00A88 /* CredentialController.swift */; };
+		55854C632A0E379A00D00A88 /* LoginOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55854C622A0E379A00D00A88 /* LoginOption.swift */; };
 		55B2E54F2A0B707900E28469 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E54E2A0B707900E28469 /* User.swift */; };
 		55B2E5512A0B70B900E28469 /* LogicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E5502A0B70B900E28469 /* LogicView.swift */; };
 		55B2E5532A0B72CE00E28469 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E5522A0B72CE00E28469 /* LoginController.swift */; };
@@ -51,6 +52,7 @@
 		554625DC2A0D15760029A1C9 /* CFCalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFCalculatorController.swift; sourceTree = "<group>"; };
 		554625DF2A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFCarbonFootprinCalcModel.swift; sourceTree = "<group>"; };
 		55854C602A0E12F400D00A88 /* CredentialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialController.swift; sourceTree = "<group>"; };
+		55854C622A0E379A00D00A88 /* LoginOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOption.swift; sourceTree = "<group>"; };
 		55B2E54E2A0B707900E28469 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		55B2E5502A0B70B900E28469 /* LogicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicView.swift; sourceTree = "<group>"; };
 		55B2E5522A0B72CE00E28469 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				55B2E54E2A0B707900E28469 /* User.swift */,
+				55854C622A0E379A00D00A88 /* LoginOption.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				554625D72A0CE8CF0029A1C9 /* CarbonFootprintModel.swift in Sources */,
 				554625DB2A0D14430029A1C9 /* CFCalculatorOption.swift in Sources */,
 				55B2E5512A0B70B900E28469 /* LogicView.swift in Sources */,
+				55854C632A0E379A00D00A88 /* LoginOption.swift in Sources */,
 				55B2E57B2A0BCC6E00E28469 /* ViewFlow.swift in Sources */,
 				55B2E5532A0B72CE00E28469 /* LoginController.swift in Sources */,
 				55B2E54F2A0B707900E28469 /* User.swift in Sources */,
