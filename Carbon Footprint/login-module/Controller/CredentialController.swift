@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct CredentialController {
+class CredentialController {
     
     var isLoggedIn:Bool = false
     
     private var loggedInUser: User?
     
-    private var credentials: [String: String] = ["Admin": "noobMaster69"]
+    private var credentials: [String: String] = ["Admin": "noobMaster69", "SuperAdmin": "proMaster69"]
     
-    mutating func addCredentials(_ credentials: User) {
+    func addCredentials(_ credentials: User) {
         self.credentials[credentials.username] = credentials.password
     }
     
@@ -44,7 +44,7 @@ struct CredentialController {
         
     }
     
-    mutating func setUserLoggedIn(user: User) {
+    func setUserLoggedIn(user: User) {
         loggedInUser = user
     }
 }

@@ -22,13 +22,13 @@ class CarbonFootprintController {
             }
         case .addFootprint:
             print("Kumbidi!!")
-            captureUserInput()
+//            captureUserInput()
         case .exit:
             print("Thanks for using the app :)")
         }
     }
     
-    func captureUserInput() {
+    /*func captureUserInput() {
         print("Enter transportation emissions (in kg CO2e):")
         if let transportationInput = readLine(), let transportationEmission = Double(transportationInput) {
 //            carbonFootprintModel.transportationEmission = transportationEmission
@@ -47,5 +47,5 @@ class CarbonFootprintController {
         }
         
         print("Total footprint is \(carbonFootprintModel.totalEmission)")
-    }
+    }*/
 }
