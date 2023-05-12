@@ -16,5 +16,4 @@ struct CarbonFootprintData {
     }
     
     // TODO: Additional methods to remove entries, retrieve data, etc.
-    func
 }

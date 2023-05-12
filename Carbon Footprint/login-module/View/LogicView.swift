@@ -27,4 +27,14 @@ struct LogicView {
         print("Invalid username or password! Please try again.")
     }
     
+    func promptCreateUser() -> String? {
+        print("Enter username -")
+        return readLine()
+    }
+    
+    func promptCreatePassword() -> String? {
+        print("Enter password -")
+        return readLine()
+    }
+    
 }

@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		550E229D2A0B67770047A491 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E229C2A0B67770047A491 /* main.swift */; };
+		554625D12A0CCB2C0029A1C9 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625D02A0CCB2C0029A1C9 /* MenuOption.swift */; };
+		554625D32A0CCB7D0029A1C9 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625D22A0CCB7D0029A1C9 /* MenuController.swift */; };
+		554625D52A0CCB9E0029A1C9 /* CarbonFootprintController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625D42A0CCB9E0029A1C9 /* CarbonFootprintController.swift */; };
+		554625D72A0CE8CF0029A1C9 /* CarbonFootprintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625D62A0CE8CF0029A1C9 /* CarbonFootprintModel.swift */; };
+		554625DB2A0D14430029A1C9 /* CFCalculatorOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625DA2A0D14430029A1C9 /* CFCalculatorOption.swift */; };
+		554625DD2A0D15760029A1C9 /* CFCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625DC2A0D15760029A1C9 /* CFCalculatorController.swift */; };
+		554625E02A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625DF2A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift */; };
+		55854C612A0E12F400D00A88 /* CredentialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55854C602A0E12F400D00A88 /* CredentialController.swift */; };
 		55B2E54F2A0B707900E28469 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E54E2A0B707900E28469 /* User.swift */; };
 		55B2E5512A0B70B900E28469 /* LogicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E5502A0B70B900E28469 /* LogicView.swift */; };
 		55B2E5532A0B72CE00E28469 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E5522A0B72CE00E28469 /* LoginController.swift */; };
@@ -17,7 +25,6 @@
 		55B2E56E2A0BAE3700E28469 /* CarbonFootprintData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E56D2A0BAE3700E28469 /* CarbonFootprintData.swift */; };
 		55B2E5702A0BAE8E00E28469 /* CarbonFootprintCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E56F2A0BAE8E00E28469 /* CarbonFootprintCategory.swift */; };
 		55B2E5732A0BC32000E28469 /* InitialConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E5722A0BC32000E28469 /* InitialConsoleView.swift */; };
-		55B2E5772A0BC6E400E28469 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E5762A0BC6E400E28469 /* HomeController.swift */; };
 		55B2E57B2A0BCC6E00E28469 /* ViewFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E57A2A0BCC6E00E28469 /* ViewFlow.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +43,14 @@
 /* Begin PBXFileReference section */
 		550E22992A0B67770047A491 /* Carbon Footprint */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Carbon Footprint"; sourceTree = BUILT_PRODUCTS_DIR; };
 		550E229C2A0B67770047A491 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		554625D02A0CCB2C0029A1C9 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
+		554625D22A0CCB7D0029A1C9 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		554625D42A0CCB9E0029A1C9 /* CarbonFootprintController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFootprintController.swift; sourceTree = "<group>"; };
+		554625D62A0CE8CF0029A1C9 /* CarbonFootprintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFootprintModel.swift; sourceTree = "<group>"; };
+		554625DA2A0D14430029A1C9 /* CFCalculatorOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFCalculatorOption.swift; sourceTree = "<group>"; };
+		554625DC2A0D15760029A1C9 /* CFCalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFCalculatorController.swift; sourceTree = "<group>"; };
+		554625DF2A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFCarbonFootprinCalcModel.swift; sourceTree = "<group>"; };
+		55854C602A0E12F400D00A88 /* CredentialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialController.swift; sourceTree = "<group>"; };
 		55B2E54E2A0B707900E28469 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		55B2E5502A0B70B900E28469 /* LogicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicView.swift; sourceTree = "<group>"; };
 		55B2E5522A0B72CE00E28469 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -45,7 +60,6 @@
 		55B2E56D2A0BAE3700E28469 /* CarbonFootprintData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFootprintData.swift; sourceTree = "<group>"; };
 		55B2E56F2A0BAE8E00E28469 /* CarbonFootprintCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFootprintCategory.swift; sourceTree = "<group>"; };
 		55B2E5722A0BC32000E28469 /* InitialConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialConsoleView.swift; sourceTree = "<group>"; };
-		55B2E5762A0BC6E400E28469 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		55B2E57A2A0BCC6E00E28469 /* ViewFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +93,7 @@
 		550E229B2A0B67770047A491 /* Carbon Footprint */ = {
 			isa = PBXGroup;
 			children = (
+				55854C5C2A0E088E00D00A88 /* login-module */,
 				55B2E55A2A0B9E2200E28469 /* CarbonCoreData.xcdatamodeld */,
 				55B2E54D2A0B6FDA00E28469 /* Controller */,
 				55B2E54C2A0B6FD300E28469 /* View */,
@@ -87,12 +102,57 @@
 			path = "Carbon Footprint";
 			sourceTree = "<group>";
 		};
+		554625DE2A0D16B90029A1C9 /* calculator-module */ = {
+			isa = PBXGroup;
+			children = (
+				554625DA2A0D14430029A1C9 /* CFCalculatorOption.swift */,
+				554625DF2A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift */,
+			);
+			path = "calculator-module";
+			sourceTree = "<group>";
+		};
+		55854C5C2A0E088E00D00A88 /* login-module */ = {
+			isa = PBXGroup;
+			children = (
+				55854C5E2A0E08B000D00A88 /* Model */,
+				55854C5D2A0E08A800D00A88 /* View */,
+				55854C5F2A0E08B600D00A88 /* Controller */,
+			);
+			path = "login-module";
+			sourceTree = "<group>";
+		};
+		55854C5D2A0E08A800D00A88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55B2E5502A0B70B900E28469 /* LogicView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55854C5E2A0E08B000D00A88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55B2E54E2A0B707900E28469 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		55854C5F2A0E08B600D00A88 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55B2E5522A0B72CE00E28469 /* LoginController.swift */,
+				55854C602A0E12F400D00A88 /* CredentialController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		55B2E54B2A0B6FCB00E28469 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				55B2E5752A0BC6C200E28469 /* coredata-model */,
+				554625DE2A0D16B90029A1C9 /* calculator-module */,
 				55B2E5742A0BC6AF00E28469 /* user-model */,
 				55B2E5712A0BC20800E28469 /* carbon-footprint-model */,
+				554625D02A0CCB2C0029A1C9 /* MenuOption.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -101,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				550E229C2A0B67770047A491 /* main.swift */,
-				55B2E5502A0B70B900E28469 /* LogicView.swift */,
 				55B2E5722A0BC32000E28469 /* InitialConsoleView.swift */,
 				55B2E57A2A0BCC6E00E28469 /* ViewFlow.swift */,
 			);
@@ -111,8 +170,10 @@
 		55B2E54D2A0B6FDA00E28469 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				55B2E5522A0B72CE00E28469 /* LoginController.swift */,
-				55B2E5762A0BC6E400E28469 /* HomeController.swift */,
+				55B2E55D2A0BA1C100E28469 /* DataController.swift */,
+				554625D22A0CCB7D0029A1C9 /* MenuController.swift */,
+				554625D42A0CCB9E0029A1C9 /* CarbonFootprintController.swift */,
+				554625DC2A0D15760029A1C9 /* CFCalculatorController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -123,6 +184,7 @@
 				55B2E5692A0BAD9E00E28469 /* CarbonFootprintEntry.swift */,
 				55B2E56F2A0BAE8E00E28469 /* CarbonFootprintCategory.swift */,
 				55B2E56D2A0BAE3700E28469 /* CarbonFootprintData.swift */,
+				554625D62A0CE8CF0029A1C9 /* CarbonFootprintModel.swift */,
 			);
 			path = "carbon-footprint-model";
 			sourceTree = "<group>";
@@ -130,17 +192,8 @@
 		55B2E5742A0BC6AF00E28469 /* user-model */ = {
 			isa = PBXGroup;
 			children = (
-				55B2E54E2A0B707900E28469 /* User.swift */,
 			);
 			path = "user-model";
-			sourceTree = "<group>";
-		};
-		55B2E5752A0BC6C200E28469 /* coredata-model */ = {
-			isa = PBXGroup;
-			children = (
-				55B2E55D2A0BA1C100E28469 /* DataController.swift */,
-			);
-			path = "coredata-model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,11 +256,18 @@
 			files = (
 				55B2E55E2A0BA1C100E28469 /* DataController.swift in Sources */,
 				55B2E5732A0BC32000E28469 /* InitialConsoleView.swift in Sources */,
-				55B2E5772A0BC6E400E28469 /* HomeController.swift in Sources */,
+				554625D52A0CCB9E0029A1C9 /* CarbonFootprintController.swift in Sources */,
+				554625D72A0CE8CF0029A1C9 /* CarbonFootprintModel.swift in Sources */,
+				554625DB2A0D14430029A1C9 /* CFCalculatorOption.swift in Sources */,
 				55B2E5512A0B70B900E28469 /* LogicView.swift in Sources */,
 				55B2E57B2A0BCC6E00E28469 /* ViewFlow.swift in Sources */,
 				55B2E5532A0B72CE00E28469 /* LoginController.swift in Sources */,
 				55B2E54F2A0B707900E28469 /* User.swift in Sources */,
+				554625E02A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift in Sources */,
+				554625DD2A0D15760029A1C9 /* CFCalculatorController.swift in Sources */,
+				554625D12A0CCB2C0029A1C9 /* MenuOption.swift in Sources */,
+				55854C612A0E12F400D00A88 /* CredentialController.swift in Sources */,
+				554625D32A0CCB7D0029A1C9 /* MenuController.swift in Sources */,
 				55B2E56E2A0BAE3700E28469 /* CarbonFootprintData.swift in Sources */,
 				55B2E5702A0BAE8E00E28469 /* CarbonFootprintCategory.swift in Sources */,
 				550E229D2A0B67770047A491 /* main.swift in Sources */,

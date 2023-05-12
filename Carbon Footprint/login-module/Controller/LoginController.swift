@@ -30,4 +30,18 @@ class LoginController {
             }
         }
     }
+    
+    func createUser() {
+        
+        let logicView = LogicView()
+        var credentailController = CredentialController()
+        
+        if let username = logicView.promptCreateUser(),
+           let password = logicView.promptCreatePassword() {
+            let newUser = User(username: username, password: password)
+            credentailController.addCredentials(newUser)
+            print(credentailController.getAllCredentials())
+        }
+        
+    }
 }

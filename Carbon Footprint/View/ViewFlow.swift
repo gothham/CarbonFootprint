@@ -10,14 +10,12 @@ import Foundation
 struct ViewFlow {
     
     let loginController = LoginController()
-    let homeController = HomeController()
-    let initialConsoleView = InitialConsoleView()
+    let menuController = MenuController()
+//    let initialConsoleView = InitialConsoleView()
     
     func run() {
-//        loginController.loginUser()
-        initialConsoleView.showHomeFeed()
-        homeController.getUserInput()
-        
+        loginController.loginUser()
+        menuController.displayMenu()
     }
     
 }
