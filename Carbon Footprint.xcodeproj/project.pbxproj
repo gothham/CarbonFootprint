@@ -96,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				55854C5C2A0E088E00D00A88 /* login-module */,
-				55B2E55A2A0B9E2200E28469 /* CarbonCoreData.xcdatamodeld */,
 				55B2E54D2A0B6FDA00E28469 /* Controller */,
 				55B2E54C2A0B6FD300E28469 /* View */,
 				55B2E54B2A0B6FCB00E28469 /* Model */,
@@ -152,6 +151,7 @@
 		55B2E54B2A0B6FCB00E28469 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				55B2E55A2A0B9E2200E28469 /* CarbonCoreData.xcdatamodeld */,
 				554625DE2A0D16B90029A1C9 /* calculator-module */,
 				55B2E5742A0BC6AF00E28469 /* user-model */,
 				55B2E5712A0BC20800E28469 /* carbon-footprint-model */,

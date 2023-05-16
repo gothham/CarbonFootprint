@@ -21,11 +21,11 @@ class LoginController {
                let password = logicView.promptPassword() {
                 let user = User(username: username, password: password)
                 if credentialController.verifyCredentials(verifyUser: user) {
-                    print("Logged in successfully!")
+                    logicView.showSuccessMessage(message: "Logged in successfully!")
                     credentialController.isLoggedIn = true
                     credentialController.setUserLoggedIn(user: user)
                 } else {
-                    print("Invalid username or password!")
+                    logicView.displayInputErrorMessage()
                 }
                 
             }
@@ -39,12 +39,15 @@ class LoginController {
         if let username = logicView.promptCreateUser(),
            let password = logicView.promptCreatePassword() {
             let newUser = User(username: username, password: password)
-            credentialController.addCredentials(newUser)
-            logicView.showSuccessMessage(message: "User created successfully.\nSign In")
-//            print(credentialController.getAllCredentials())
-            loginUser()
+            if !credentialController.existingUser(user: newUser) {
+                credentialController.addCredentials(newUser)
+                logicView.showSuccessMessage(message: "User created successfully.\nSign In")
+                loginUser()
+            } else {
+                print("User already exists")
+            }
         } else {
-            print("[Error message 👾!] Failed to create user.")
+            logicView.showErrorMessage(message: "Failed to create user.")
         }
         
     }

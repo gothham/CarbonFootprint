@@ -23,7 +23,7 @@ struct LogicView {
         print(message)
     }
     
-    func showErrorMessage() {
+    func displayInputErrorMessage() {
         print("Invalid username or password! Please try again.")
     }
     
@@ -35,6 +35,10 @@ struct LogicView {
     func promptCreatePassword() -> String? {
         print("Enter password -")
         return readLine()
+    }
+    
+    func showErrorMessage(message: String) {
+        print("[Error 👾! \(message)")
     }
     
 }

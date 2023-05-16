@@ -47,4 +47,19 @@ class CredentialController {
     func setUserLoggedIn(user: User) {
         loggedInUser = user
     }
+    
+    // TODO: Change password
+    func changePassword(user: User) {
+        
+    }
+    
+    // TODO: Check for duplicates or user already exists
+    func existingUser(user: User) -> Bool{
+        if verifyCredentials(verifyUser: user) {
+            return true
+        } else {
+            print("New user")
+            return false
+        }
+    }
 }
