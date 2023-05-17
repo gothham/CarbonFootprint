@@ -10,7 +10,7 @@ import Foundation
 struct ViewFlow {
     
     let loginController = LoginController()
-    let menuController = MenuController()
+//    let menuController = MenuController()
 //    let initialConsoleView = InitialConsoleView()
     
     func run() {
