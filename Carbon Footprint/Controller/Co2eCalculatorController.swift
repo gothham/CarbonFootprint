@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CFCalculatorController {
+class Co2eCalculatorController {
     
     let carbonFootprintModel = CFCarbonFootprinCalcModel()
     

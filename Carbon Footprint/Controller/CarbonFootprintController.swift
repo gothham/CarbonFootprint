@@ -11,15 +11,13 @@ class CarbonFootprintController {
     
     let carbonFootprintModel = CFCarbonFootprinCalcModel()
     let calculatorController = CFCalculatorController()
+    let cfCalcualtorView = CalculatorView()
     
     func handleUserInput(selectedOption option: MenuOption) {
         switch option {
         case .calculateCarbonFootprint:
             print("Ethida makale!")
-//            captureUserInput()
-            if let userInput = readLine(), let selectedOption = Int(userInput), let option = CFCalculatorOption(rawValue: selectedOption) {
-                calculatorController.handleCalcOptionInput(option: option)
-            }
+            cfCalcualtorView.showCategory()
         case .addFootprint:
             print("Kumbidi!!")
 //            captureUserInput()

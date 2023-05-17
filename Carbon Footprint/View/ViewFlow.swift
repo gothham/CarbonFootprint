@@ -15,7 +15,7 @@ struct ViewFlow {
     
     func run() {
         loginController.loginUser()
-        menuController.displayMenu()
+//        menuController.displayMenu()
     }
     
 }
