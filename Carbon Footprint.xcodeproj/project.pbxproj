@@ -216,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				55B2E54E2A0B707900E28469 /* User.swift */,
+				55854C602A0E12F400D00A88 /* CredentialController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,7 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				55B2E5522A0B72CE00E28469 /* LoginController.swift */,
-				55854C602A0E12F400D00A88 /* CredentialController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

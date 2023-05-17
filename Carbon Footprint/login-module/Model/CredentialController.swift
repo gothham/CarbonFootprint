@@ -53,6 +53,12 @@ class CredentialController {
         
     }
     
+    func logOutUser() {
+        let menuLogicView = MenuLogicView()
+        isLoggedIn = false
+        menuLogicView.displayMenuOption()
+    }
+    
     // TODO: Check for duplicates or user already exists
     func existingUser(user: User) -> Bool{
         if verifyCredentials(verifyUser: user) {

@@ -11,8 +11,11 @@ struct CalculatorView {
     
     func showCategory() {
         let cfCalculatorController = CFCalculatorController()
+        print("Carbon footprint calculator")
         print("1. Calculate transportion footprint.")
         print("2. Calculate diet footprint.")
+        print("0. Go back")
+        print("Please select an option (Number)")
         
         if let userInput = readLine(), let userChoice = Int(userInput), let option = CalculatorCategoryOption(rawValue: userChoice) {
             cfCalculatorController.handleUserInput(option: option)
@@ -22,22 +25,20 @@ struct CalculatorView {
         }
     }
     
-    func showTransportView() {
-        print("Yeah reached showTransportView!")
+    
+//    func babyPullMeCloser(Song: String)
+    
+    /*func showTransportView() {
         let userInteraction = UserInteraction()
-        
         let cfCalculator = CarbonFootprintCalculator()
-        if let distanceInput: Double = userInteraction.promptValue(),
-           let fuelConsumptionInput: Double = userInteraction.promptValue(),
-           let emissionFactorInput: Double = userInteraction.promptValue() {
-            print(cfCalculator.calculateFootprintForCar(distance: distanceInput, fuelConsumption: fuelConsumptionInput, emissionFactor: emissionFactorInput))
+        print("Yeah reached showTransportView!")
+        
+        if let distanceInput: Double = userInteraction.promptValue() {
+           print(distanceInput)
         } else {
             print("Invalid input")
             print("Debug info - else block got excuted in showTransportView()")
         }
         
-    }
-    
-    
-//    func babyPullMeCloser(Song: String)
+    }*/
 }

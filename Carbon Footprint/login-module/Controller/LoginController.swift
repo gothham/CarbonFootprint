@@ -12,11 +12,11 @@ class LoginController {
     let credentialController = CredentialController()
     
     func loginUser() {
-        
         let logicView = LogicView()
         
         while !credentialController.isLoggedIn {
 //            print(credentialController.getAllCredentials())
+            
             if let username = logicView.promptForUsername(),
                let password = logicView.promptPassword() {
                 let user = User(username: username, password: password)
@@ -27,7 +27,6 @@ class LoginController {
                 } else {
                     logicView.displayInputErrorMessage()
                 }
-                
             }
         }
     }
