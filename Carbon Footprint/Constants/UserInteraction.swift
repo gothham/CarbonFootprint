@@ -33,8 +33,13 @@ class UserInteraction {
         return readLine()
     }
     
-    func promptEmissionFactor() -> String?{
+    func promptEmissionFactor() -> String? {
         print("Enter emission factor")
+        return readLine()
+    }
+    
+    func promptMessage(message: String) -> String? {
+        print(message)
         return readLine()
     }
     

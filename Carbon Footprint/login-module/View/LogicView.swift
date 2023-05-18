@@ -9,13 +9,8 @@ import Foundation
 
 struct LogicView {
     
-    func promptForUsername() -> String? {
-        print("Enter the username -")
-        return readLine()
-    }
-    
-    func promptPassword() -> String? {
-        print("Enter the password -")
+    func promptMessage(message: String) -> String? {
+        print(message)
         return readLine()
     }
     
@@ -27,15 +22,6 @@ struct LogicView {
         print("Invalid username or password! Please try again.")
     }
     
-    func promptCreateUser() -> String? {
-        print("Enter username -")
-        return readLine()
-    }
-    
-    func promptCreatePassword() -> String? {
-        print("Enter password -")
-        return readLine()
-    }
     
     func showErrorMessage(message: String) {
         print("[Error 👾! \(message)")

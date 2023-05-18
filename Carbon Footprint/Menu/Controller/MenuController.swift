@@ -7,17 +7,16 @@
 
 import Foundation
 
-class CarbonFootprintController {
+class MenuController {
     
     let carbonFootprintModel = CFCarbonFootprinCalcModel()
     let calculatorController = CFCalculatorController()
-    let cfCalcualtorView = CalculatorView()
+    let cfCalcualtorView = CFCalculatorView()
     let loginController = LoginController()
     
     func handleUserInput(selectedOption option: MenuOption) {
         switch option {
         case .calculateCarbonFootprint:
-//            print("Debug - inside case .calculateCarbonFootprint")
             cfCalcualtorView.showCategory()
         case .addFootprint:
             print("Debug - inside case .addFootprint")
@@ -25,8 +24,9 @@ class CarbonFootprintController {
             print("Thanks for using the app :)")
             break
         case .logOut:
-//            print("Debug - inside case .logOut")
-            print("Thanks for using the app.")
+            print("Thanks for using the app. 👋")
+//            print(CredentialController.shared.getAllCredentials())
+            CredentialController.shared.prepareLogOut()
             loginController.displayLoginMenu()
         }
     }

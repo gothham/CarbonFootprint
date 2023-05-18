@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CalculatorView {
+struct CFCalculatorView {
     
     func showCategory() {
         let cfCalculatorController = CFCalculatorController()

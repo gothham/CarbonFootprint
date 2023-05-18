@@ -12,13 +12,13 @@
 		550246C12A14BDED0091D796 /* MenuLogicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550246C02A14BDED0091D796 /* MenuLogicView.swift */; };
 		550E229D2A0B67770047A491 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E229C2A0B67770047A491 /* main.swift */; };
 		554625D12A0CCB2C0029A1C9 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625D02A0CCB2C0029A1C9 /* MenuOption.swift */; };
-		554625D52A0CCB9E0029A1C9 /* CarbonFootprintController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625D42A0CCB9E0029A1C9 /* CarbonFootprintController.swift */; };
+		554625D52A0CCB9E0029A1C9 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625D42A0CCB9E0029A1C9 /* MenuController.swift */; };
 		554625D72A0CE8CF0029A1C9 /* CarbonFootprintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625D62A0CE8CF0029A1C9 /* CarbonFootprintModel.swift */; };
 		554625DB2A0D14430029A1C9 /* CFCalculatorOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625DA2A0D14430029A1C9 /* CFCalculatorOption.swift */; };
 		554625DD2A0D15760029A1C9 /* Co2eCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625DC2A0D15760029A1C9 /* Co2eCalculatorController.swift */; };
 		554625E02A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625DF2A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift */; };
 		5579A80F2A13B41C00DF19B5 /* CarbonFootprintCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579A80E2A13B41C00DF19B5 /* CarbonFootprintCalculator.swift */; };
-		5579A8112A13B86300DF19B5 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579A8102A13B86300DF19B5 /* CalculatorView.swift */; };
+		5579A8112A13B86300DF19B5 /* CFCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579A8102A13B86300DF19B5 /* CFCalculatorView.swift */; };
 		5579A8142A13B95200DF19B5 /* CalculatorCategoryOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579A8132A13B95200DF19B5 /* CalculatorCategoryOption.swift */; };
 		5579A8162A14A3E500DF19B5 /* CFCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579A8152A14A3E500DF19B5 /* CFCalculatorController.swift */; };
 		55854C612A0E12F400D00A88 /* CredentialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55854C602A0E12F400D00A88 /* CredentialController.swift */; };
@@ -53,13 +53,13 @@
 		550E22992A0B67770047A491 /* Carbon Footprint */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Carbon Footprint"; sourceTree = BUILT_PRODUCTS_DIR; };
 		550E229C2A0B67770047A491 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		554625D02A0CCB2C0029A1C9 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
-		554625D42A0CCB9E0029A1C9 /* CarbonFootprintController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFootprintController.swift; sourceTree = "<group>"; };
+		554625D42A0CCB9E0029A1C9 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		554625D62A0CE8CF0029A1C9 /* CarbonFootprintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFootprintModel.swift; sourceTree = "<group>"; };
 		554625DA2A0D14430029A1C9 /* CFCalculatorOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFCalculatorOption.swift; sourceTree = "<group>"; };
 		554625DC2A0D15760029A1C9 /* Co2eCalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Co2eCalculatorController.swift; sourceTree = "<group>"; };
 		554625DF2A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFCarbonFootprinCalcModel.swift; sourceTree = "<group>"; };
 		5579A80E2A13B41C00DF19B5 /* CarbonFootprintCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFootprintCalculator.swift; sourceTree = "<group>"; };
-		5579A8102A13B86300DF19B5 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
+		5579A8102A13B86300DF19B5 /* CFCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFCalculatorView.swift; sourceTree = "<group>"; };
 		5579A8132A13B95200DF19B5 /* CalculatorCategoryOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCategoryOption.swift; sourceTree = "<group>"; };
 		5579A8152A14A3E500DF19B5 /* CFCalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFCalculatorController.swift; sourceTree = "<group>"; };
 		55854C602A0E12F400D00A88 /* CredentialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialController.swift; sourceTree = "<group>"; };
@@ -99,6 +99,7 @@
 		550246BD2A14BDA70091D796 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				55F783F52A163309000E4158 /* Controller */,
 				550246BF2A14BDC80091D796 /* View */,
 			);
 			path = Menu;
@@ -163,7 +164,7 @@
 		5579A80B2A13B38500DF19B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5579A8102A13B86300DF19B5 /* CalculatorView.swift */,
+				5579A8102A13B86300DF19B5 /* CFCalculatorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,7 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				55B2E55D2A0BA1C100E28469 /* DataController.swift */,
-				554625D42A0CCB9E0029A1C9 /* CarbonFootprintController.swift */,
 				554625DC2A0D15760029A1C9 /* Co2eCalculatorController.swift */,
 			);
 			path = Controller;
@@ -276,6 +276,14 @@
 			children = (
 			);
 			path = "user-model";
+			sourceTree = "<group>";
+		};
+		55F783F52A163309000E4158 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				554625D42A0CCB9E0029A1C9 /* MenuController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,7 +347,7 @@
 				55B2E55E2A0BA1C100E28469 /* DataController.swift in Sources */,
 				55B2E5732A0BC32000E28469 /* InitialConsoleView.swift in Sources */,
 				5579A8142A13B95200DF19B5 /* CalculatorCategoryOption.swift in Sources */,
-				554625D52A0CCB9E0029A1C9 /* CarbonFootprintController.swift in Sources */,
+				554625D52A0CCB9E0029A1C9 /* MenuController.swift in Sources */,
 				550246C12A14BDED0091D796 /* MenuLogicView.swift in Sources */,
 				554625D72A0CE8CF0029A1C9 /* CarbonFootprintModel.swift in Sources */,
 				554625DB2A0D14430029A1C9 /* CFCalculatorOption.swift in Sources */,
@@ -350,7 +358,7 @@
 				55B2E54F2A0B707900E28469 /* User.swift in Sources */,
 				554625E02A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift in Sources */,
 				5579A80F2A13B41C00DF19B5 /* CarbonFootprintCalculator.swift in Sources */,
-				5579A8112A13B86300DF19B5 /* CalculatorView.swift in Sources */,
+				5579A8112A13B86300DF19B5 /* CFCalculatorView.swift in Sources */,
 				554625DD2A0D15760029A1C9 /* Co2eCalculatorController.swift in Sources */,
 				554625D12A0CCB2C0029A1C9 /* MenuOption.swift in Sources */,
 				550246B92A14B2C90091D796 /* UserInteraction.swift in Sources */,

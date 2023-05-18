@@ -21,7 +21,7 @@ class MenuLogicView {
     }
     
     func getUserInput() {
-        let carbonFootprintController = CarbonFootprintController()
+        let carbonFootprintController = MenuController()
         if let input = readLine(),let userInput = Int(input), let option = MenuOption(rawValue: userInput) {
             carbonFootprintController.handleUserInput(selectedOption: option)
         } else {

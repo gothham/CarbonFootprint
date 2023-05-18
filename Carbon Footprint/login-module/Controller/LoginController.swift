@@ -9,21 +9,22 @@ import Foundation
 
 class LoginController {
     
-    let credentialController = CredentialController()
+//    let credentialController = CredentialController()
     
     func loginUser() {
+        let menuLogicView = MenuLogicView()
         let logicView = LogicView()
         
-        while !credentialController.isLoggedIn {
-//            print(credentialController.getAllCredentials())
-            
-            if let username = logicView.promptForUsername(),
-               let password = logicView.promptPassword() {
+        while !CredentialController.shared.isLoggedIn {
+            if let username = logicView.promptMessage(message: "Enter the username:"),
+               let password = logicView.promptMessage(message: "Enter the password: ") {
                 let user = User(username: username, password: password)
-                if credentialController.verifyCredentials(verifyUser: user) {
+                if CredentialController.shared.verifyCredentials(verifyUser: user) {
                     logicView.showSuccessMessage(message: "Logged in successfully!")
-                    credentialController.isLoggedIn = true
-                    credentialController.setUserLoggedIn(user: user)
+                    CredentialController.shared.isLoggedIn = true
+                    CredentialController.shared.setUserLoggedIn(user: user)
+                    // Taking user to menu...
+                    menuLogicView.displayMenuOption()
                 } else {
                     logicView.displayInputErrorMessage()
                 }
@@ -35,29 +36,27 @@ class LoginController {
         
         let logicView = LogicView()
         
-        if let username = logicView.promptCreateUser(),
-           let password = logicView.promptCreatePassword() {
+        if let username = logicView.promptMessage(message: "Please enter the desired account name for creation:"),
+           let password = logicView.promptMessage(message: "Please create a password for your account:") {
             let newUser = User(username: username, password: password)
-            if !credentialController.existingUser(user: newUser) {
-                credentialController.addCredentials(newUser)
+            if !CredentialController.shared.existingUser(user: newUser) {
+                CredentialController.shared.addCredentials(newUser)
                 logicView.showSuccessMessage(message: "User created successfully.\nSign In")
                 loginUser()
             } else {
                 print("User already exists")
+                createUser()
             }
         } else {
             logicView.showErrorMessage(message: "Failed to create user.")
         }
         
     }
-}
-
-extension LoginController {
     
     func displayLoginMenu() {
         print("1. Create account.")
         print("2. Already have an account? Login now.")
-        
+//        print("Debug info - \(CredentialController.shared.getAllCredentials())")
         // accepting user input
         if let userInput = readLine(),
          let selectedOption = Int(userInput),
@@ -80,5 +79,5 @@ extension LoginController {
         }
         
     }
-    
 }
+

@@ -4,6 +4,8 @@
 //
 //  Created by doss-zstch1212 on 16/05/23.
 //
+/// Calculations for Carbon Footprint
+/// Emissions = Total electricity usage (kWh) * Carbon intensity of the local grid (kg CO2/kWh)
 
 import Foundation
 
@@ -17,9 +19,12 @@ class CarbonFootprintCalculator {
         let carbonFootprint = distance * fuelConsumption * emissionFactor
         return carbonFootprint
     }
-
-    func addFootprint(footprint: Double) {
-        totalFootprint += footprint
+    
+    func calculateHouseholdFootprint(totalElectricityUsage: Double, carbonIntensityOfLocalGrid: Double) -> Double{
+        let carbonFootprint = totalElectricityUsage * carbonIntensityOfLocalGrid
+        return carbonFootprint
     }
+    
+//    func 
 
 }

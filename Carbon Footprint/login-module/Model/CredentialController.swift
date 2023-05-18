@@ -9,11 +9,13 @@ import Foundation
 
 class CredentialController {
     
+    static let shared = CredentialController()
+    
     var isLoggedIn:Bool = false
     
     private var loggedInUser: User?
     
-    private var credentials: [String: String] = ["Admin": "noobMaster69", "SuperAdmin": "proMaster69"]
+    var credentials: [String: String] = ["Admin": "noobMaster69", "SuperAdmin": "proMaster69"]
     
     func addCredentials(_ credentials: User) {
         self.credentials[credentials.username] = credentials.password
@@ -53,19 +55,19 @@ class CredentialController {
         
     }
     
-    func logOutUser() {
-        let menuLogicView = MenuLogicView()
+    func prepareLogOut() {
         isLoggedIn = false
-        menuLogicView.displayMenuOption()
     }
     
     // TODO: Check for duplicates or user already exists
     func existingUser(user: User) -> Bool{
-        if verifyCredentials(verifyUser: user) {
+        /*if verifyCredentials(verifyUser: user) {
             return true
         } else {
             print("New user")
             return false
-        }
+        }*/
+        
+        return credentials[user.username] != nil
     }
 }

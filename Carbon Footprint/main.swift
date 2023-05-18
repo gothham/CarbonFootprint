@@ -8,10 +8,10 @@
 import Foundation
 
 //let viewFlow = ViewFlow()
-//let test = LoginController()
-//test.displayLoginMenu()
+let test = LoginController()
+test.displayLoginMenu()
 
 //viewFlow.run()
 
-let menu = MenuLogicView()
-menu.displayMenuOption()
+//let menu = MenuLogicView()
+//menu.displayMenuOption()
