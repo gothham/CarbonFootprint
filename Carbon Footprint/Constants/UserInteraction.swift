@@ -1,7 +1,7 @@
 //
 //  UserInteraction.swift
 //  Carbon Footprint
-//
+//  
 //  Created by doss-zstch1212 on 17/05/23.
 /// Use this class for dealing with the user interactions across the project.
 

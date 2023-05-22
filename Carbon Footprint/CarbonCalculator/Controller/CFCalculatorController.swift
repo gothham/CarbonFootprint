@@ -9,6 +9,8 @@ import Foundation
 
 class CFCalculatorController {
     
+    static let shared = CFCalculatorController()
+    
     let cfCalculator = CarbonFootprintCalculator()
     
     func handleUserInput(option: CalculatorCategoryOption) {
@@ -23,6 +25,8 @@ class CFCalculatorController {
         case .electricity:
             print("electricity case excuted!")
             captureElectricityInput()
+        case .displayAllFootprint:
+            cfCalculator.displayAllFootprint()
         }
     }
     
@@ -33,11 +37,13 @@ class CFCalculatorController {
         if let distanceInput = userInteraction.promptDistance(),
            let fuelConsumptionInput = userInteraction.promptFuelConsumption(),
            let emissionFactorInput = userInteraction.promptEmissionFactor() {
-            let distance = Double(distanceInput)!
-            let fuelConsumption = Double(fuelConsumptionInput)!
-            let emissionfactor = Double(emissionFactorInput)!
+            // unwrapping the optionals
+            guard let distance = Double(distanceInput) else { return }
+            guard let fuelConsumption = Double(fuelConsumptionInput) else { return }
+            guard let emissionFactor = Double(emissionFactorInput) else { return }
             
-            let footprint = cfCalculator.calculateFootprintForCar(distance: distance, fuelConsumption: fuelConsumption, emissionFactor: emissionfactor)
+            let footprint = cfCalculator.calculateFootprintForTransport(distance: distance, fuelConsumption: fuelConsumption, emissionFactor: emissionFactor)
+            cfCalculator.updateTotalFootprint(value: footprint)
             print("Total footprint = \(cfCalculator.totalFootprint)")
             calculatorView.showCategory()
         } else {
@@ -48,16 +54,17 @@ class CFCalculatorController {
     func captureElectricityInput() {
         let userInteraction = UserInteraction()
         let calculatorView = CFCalculatorView()
+        
         if let electricityUsageInput = userInteraction.promptMessage(message: "Enter total electricity usage in kWh."),
         let carbonIntensityInput = userInteraction.promptMessage(message: "Enter the carbon intensity of local grid in kg CO2/kWh") {
-//            let electrictyUsage = Double(electricityUsageInput)!
-//            let carbonIntensity = Double(carbonIntensityInput)!
+            // unwrapping the optionals
             guard let electrictyUsage = Double(electricityUsageInput) else { return }
             guard let carbonIntensity = Double(carbonIntensityInput) else { return }
             
-            
-            let footprint = cfCalculator.calculateHouseholdFootprint(totalElectricityUsage: electrictyUsage, carbonIntensityOfLocalGrid: carbonIntensity)
-            print("Total footprint = \(cfCalculator.totalFootprint)")
+            print("Total footprint before = \(cfCalculator.totalFootprint)") //before
+            let footprint = cfCalculator.calculateElectricityFootprint(totalElectricityUsage: electrictyUsage, carbonIntensityOfLocalGrid: carbonIntensity)
+            cfCalculator.updateTotalFootprint(value: footprint)
+            print("Total footprint after = \(cfCalculator.totalFootprint)") // After
             calculatorView.showCategory()
         } else {
             print("Invalid input [else block]")

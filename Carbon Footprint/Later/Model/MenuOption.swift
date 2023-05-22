@@ -10,7 +10,7 @@ import Foundation
 enum MenuOption: Int {
     
     case calculateCarbonFootprint = 1
-    case addFootprint = 2
+    case carbonOffset = 2
     case logOut = 3
     case exit = 0
     

@@ -15,16 +15,43 @@ class CarbonFootprintCalculator {
     
     var transportationFootprint: Double = 0.0
     
-    func calculateFootprintForCar(distance: Double, fuelConsumption: Double, emissionFactor: Double) -> Double {
+    var electricityFootprint: Double = 0.0
+    
+    var dietFootprint: Double = 0.0
+    
+    var footprints: [CarbonFootprint] = []
+    
+    func calculateFootprintForTransport(distance: Double, fuelConsumption: Double, emissionFactor: Double) -> Double {
         let carbonFootprint = distance * fuelConsumption * emissionFactor
         return carbonFootprint
     }
     
-    func calculateHouseholdFootprint(totalElectricityUsage: Double, carbonIntensityOfLocalGrid: Double) -> Double{
+    func calculateElectricityFootprint(totalElectricityUsage: Double, carbonIntensityOfLocalGrid: Double) -> Double{
         let carbonFootprint = totalElectricityUsage * carbonIntensityOfLocalGrid
         return carbonFootprint
     }
     
-//    func 
+//    func calculateDietFootprint()
+    
+    func updateTotalFootprint(value: Double) {
+        totalFootprint += value
+    }
+    
+    func addFootprint(to type: EmissionType, value: Double) {
+        switch type {
+        case .transportation:
+            transportationFootprint += value
+        case .electricity:
+            electricityFootprint += value
+        case .diet:
+            dietFootprint += value
+        }
+    }
 
+    func displayAllFootprint() {
+        print("Total Footprint is \(totalFootprint)")
+        print("Transportation Footprint: \(transportationFootprint)")
+        print("Electricity Footprint: \(electricityFootprint)")
+    }
 }
+
