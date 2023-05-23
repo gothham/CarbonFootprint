@@ -10,8 +10,7 @@ import Foundation
 struct CarbonFootprint {
     
     let footprintId: Int
-    let date: Date
-    let activityType: ActivityType
+    let activityType: Activity
     let emission: Double
     
 }

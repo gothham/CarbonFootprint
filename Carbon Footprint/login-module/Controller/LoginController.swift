@@ -20,7 +20,7 @@ class LoginController {
                let password = logicView.promptMessage(message: "Enter the password: ") {
                 let user = User(username: username, password: password)
                 if CredentialController.shared.verifyCredentials(verifyUser: user) {
-                    logicView.showSuccessMessage(message: "Logged in successfully!")
+                    logicView.showSuccessMessage(message: "/n[Logged in successfully!]")
                     CredentialController.shared.isLoggedIn = true
                     CredentialController.shared.setUserLoggedIn(user: user)
                     // Taking user to menu...

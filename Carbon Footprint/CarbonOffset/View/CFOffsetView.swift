@@ -12,6 +12,7 @@ struct CFOffsetView {
     let offsetController = CFOffsetController()
     
     func displayOffsetMenu() {
+        print()
         print("1. Show marketplace.")
         print("2. Buy carbon credits.")
         print("3. Sell credits.")

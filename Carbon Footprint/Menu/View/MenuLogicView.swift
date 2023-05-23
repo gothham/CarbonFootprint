@@ -11,12 +11,15 @@ class MenuLogicView {
     
     // MARK: Change the menu options here
     func displayMenuOption() {
-        print("Welcome to the Co2e app.")
+        print()
+        print("-   Welcome to the Co2e app.")
+        print("--------------------------------")
         print("0. Exit")
         print("1. Calculate carbon footprint.")
         print("2. Offset carbon footprint.")
         print("3. Log out")
-        print("Please select an option.")
+//        print("Please select an option.")
+        print("--------------------------------")
         getUserInput()
     }
     

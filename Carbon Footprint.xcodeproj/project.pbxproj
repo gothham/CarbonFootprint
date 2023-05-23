@@ -37,10 +37,10 @@
 		55D1B8AB2A175E12000A8346 /* CFOffsetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B8AA2A175E12000A8346 /* CFOffsetController.swift */; };
 		55D1B8AD2A177C0F000A8346 /* OffsetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B8AC2A177C0F000A8346 /* OffsetManager.swift */; };
 		55D1B8AF2A177CAD000A8346 /* CarbonCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B8AE2A177CAD000A8346 /* CarbonCredit.swift */; };
-		55D1B8B32A18EF5D000A8346 /* EmissionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B8B22A18EF5D000A8346 /* EmissionType.swift */; };
 		55D1B8B52A1B2C65000A8346 /* CarbonFootprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B8B42A1B2C65000A8346 /* CarbonFootprint.swift */; };
-		55D1B8B72A1B2D58000A8346 /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B8B62A1B2D58000A8346 /* ActivityType.swift */; };
+		55D1B8B72A1B2D58000A8346 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B8B62A1B2D58000A8346 /* Activity.swift */; };
 		55D1B8B92A1B2E8A000A8346 /* FootprintConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B8B82A1B2E8A000A8346 /* FootprintConstant.swift */; };
+		55D1B8BB2A1B9FE1000A8346 /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B8BA2A1B9FE1000A8346 /* ActivityType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,10 +87,10 @@
 		55D1B8AA2A175E12000A8346 /* CFOffsetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFOffsetController.swift; sourceTree = "<group>"; };
 		55D1B8AC2A177C0F000A8346 /* OffsetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetManager.swift; sourceTree = "<group>"; };
 		55D1B8AE2A177CAD000A8346 /* CarbonCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonCredit.swift; sourceTree = "<group>"; };
-		55D1B8B22A18EF5D000A8346 /* EmissionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmissionType.swift; sourceTree = "<group>"; };
 		55D1B8B42A1B2C65000A8346 /* CarbonFootprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFootprint.swift; sourceTree = "<group>"; };
-		55D1B8B62A1B2D58000A8346 /* ActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
+		55D1B8B62A1B2D58000A8346 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		55D1B8B82A1B2E8A000A8346 /* FootprintConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootprintConstant.swift; sourceTree = "<group>"; };
+		55D1B8BA2A1B9FE1000A8346 /* ActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,10 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				5579A80E2A13B41C00DF19B5 /* CarbonFootprintCalculator.swift */,
-				55D1B8B22A18EF5D000A8346 /* EmissionType.swift */,
 				55D1B8B42A1B2C65000A8346 /* CarbonFootprint.swift */,
-				55D1B8B62A1B2D58000A8346 /* ActivityType.swift */,
+				55D1B8B62A1B2D58000A8346 /* Activity.swift */,
 				55D1B8B82A1B2E8A000A8346 /* FootprintConstant.swift */,
+				55D1B8BA2A1B9FE1000A8346 /* ActivityType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,9 +423,9 @@
 				5579A80F2A13B41C00DF19B5 /* CarbonFootprintCalculator.swift in Sources */,
 				5579A8112A13B86300DF19B5 /* CFCalculatorView.swift in Sources */,
 				554625DD2A0D15760029A1C9 /* Co2eCalculatorController.swift in Sources */,
-				55D1B8B72A1B2D58000A8346 /* ActivityType.swift in Sources */,
+				55D1B8B72A1B2D58000A8346 /* Activity.swift in Sources */,
 				554625D12A0CCB2C0029A1C9 /* MenuOption.swift in Sources */,
-				55D1B8B32A18EF5D000A8346 /* EmissionType.swift in Sources */,
+				55D1B8BB2A1B9FE1000A8346 /* ActivityType.swift in Sources */,
 				55D1B8AF2A177CAD000A8346 /* CarbonCredit.swift in Sources */,
 				550246B92A14B2C90091D796 /* UserInteraction.swift in Sources */,
 				55854C612A0E12F400D00A88 /* CredentialController.swift in Sources */,

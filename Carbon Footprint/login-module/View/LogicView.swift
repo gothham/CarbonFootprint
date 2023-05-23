@@ -22,7 +22,6 @@ struct LogicView {
         print("Invalid username or password! Please try again.")
     }
     
-    
     func showErrorMessage(message: String) {
         print("[Error 👾! \(message)")
     }

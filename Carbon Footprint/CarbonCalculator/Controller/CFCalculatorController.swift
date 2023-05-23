@@ -5,6 +5,15 @@
 //  Created by doss-zstch1212 on 17/05/23.
 //
 
+//TODO: excute the below statements
+/*
+ 1) Type of footprint that's gonna be added. (Done)
+ 2) Get the inputs for the user according the activity type.
+ 3) Do the calculation internally and add the footprint array. (Done)
+ 4) Fetch the footprint and display it to the user. (Done)
+ 5) Searching the footprint.
+ */
+
 import Foundation
 
 class CFCalculatorController {
@@ -13,7 +22,9 @@ class CFCalculatorController {
     
     let cfCalculator = CarbonFootprintCalculator()
     
-    func handleUserInput(option: CalculatorCategoryOption) {
+//    let showMainMenu = MenuLogicView()
+    
+   /* func handleUserInput(option: CalculatorCategoryOption) {
         
         let menuLogicView = MenuLogicView()
         switch option {
@@ -21,28 +32,57 @@ class CFCalculatorController {
             print("Going back..")
             menuLogicView.displayMenuOption()
         case .transportation:
-            getUserInputForTransportation()
+            captureTransportInput()
         case .electricity:
             print("electricity case excuted!")
             captureElectricityInput()
         case .displayAllFootprint:
             cfCalculator.displayAllFootprint()
         }
+    } */
+    
+    func handleUserInputForType(option: ActivityTypeOption) {
+        
+        let showMainMenu = MenuLogicView()
+        
+        switch option {
+            
+        case .transportation:
+            print("Selected transportation.")
+            captureTransportInput()
+        case .diet:
+            print("Selected diet.")
+        case .electricity:
+            print("Selected electricity.")
+            captureElectricityInput()
+        case .household:
+            print("Selected household.")
+        case .displayFootprint:
+            print("Selected displayFootprint.")
+            cfCalculator.displayFootprint()
+        case .other:
+            print("Selected other.")
+        case .back:
+            print("Selected go back.")
+            showMainMenu.displayMenuOption()
+        }
+
     }
     
-    func getUserInputForTransportation() {
+    func captureTransportInput() {
         let userInteraction = UserInteraction()
         let calculatorView = CFCalculatorView()
         
         if let distanceInput = userInteraction.promptDistance(),
-           let fuelConsumptionInput = userInteraction.promptFuelConsumption(),
-           let emissionFactorInput = userInteraction.promptEmissionFactor() {
+           let fuelConsumptionInput = userInteraction.promptFuelConsumption()
+//           let emissionFactorInput = userInteraction.promptEmissionFactor()
+        {
             // unwrapping the optionals
             guard let distance = Double(distanceInput) else { return }
             guard let fuelConsumption = Double(fuelConsumptionInput) else { return }
-            guard let emissionFactor = Double(emissionFactorInput) else { return }
+//            guard let emissionFactor = Double(emissionFactorInput) else { return }
             
-            let footprint = cfCalculator.calculateFootprintForTransport(distance: distance, fuelConsumption: fuelConsumption, emissionFactor: emissionFactor)
+            let footprint = cfCalculator.calculateFootprintForTransport(distance: distance, fuelConsumption: fuelConsumption)
             cfCalculator.updateTotalFootprint(value: footprint)
             print("Total footprint = \(cfCalculator.totalFootprint)")
             calculatorView.showCategory()
@@ -72,3 +112,17 @@ class CFCalculatorController {
     }
     
 }
+
+
+enum  ActivityTypeOption: Int{
+    
+    case transportation = 1
+    case diet = 2
+    case electricity = 3
+    case household = 4
+    case other = 5
+    case displayFootprint = 6
+    case back = 0
+    
+}
+

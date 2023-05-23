@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct FootprintConstant {
+class FootprintConstant {
     
-    let publicEmissionFactor = 3.2//kg CO2 per liter (12 kg CO2 per gallon)
+    static let shared = FootprintConstant()
+    
+    let publicEmissionFactor: Double = 3.2//kg CO2 per liter (12 kg CO2 per gallon)
     
     enum CarbonFactor: Double {
         // carbon factor for different power source

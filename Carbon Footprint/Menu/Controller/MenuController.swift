@@ -20,7 +20,7 @@ class MenuController {
         case .calculateCarbonFootprint:
             cfCalcualtorView.showCategory()
         case .carbonOffset:
-            print("Debug - inside case .addFootprint")
+//            print("Debug - inside case .addFootprint")
             // TODO: Take user to the offset menu.
             offsetView.displayOffsetMenu()
         case .exit:
