@@ -22,49 +22,31 @@ class CFCalculatorController {
     
     let cfCalculator = CarbonFootprintCalculator()
     
-//    let showMainMenu = MenuLogicView()
-    
-   /* func handleUserInput(option: CalculatorCategoryOption) {
-        
-        let menuLogicView = MenuLogicView()
-        switch option {
-        case .back:
-            print("Going back..")
-            menuLogicView.displayMenuOption()
-        case .transportation:
-            captureTransportInput()
-        case .electricity:
-            print("electricity case excuted!")
-            captureElectricityInput()
-        case .displayAllFootprint:
-            cfCalculator.displayAllFootprint()
-        }
-    } */
-    
     func handleUserInputForType(option: ActivityTypeOption) {
         
         let showMainMenu = MenuLogicView()
+        let calculatorView = CFCalculatorView()
         
         switch option {
             
         case .transportation:
-            print("Selected transportation.")
             captureTransportInput()
         case .diet:
             print("Selected diet.")
         case .electricity:
-            print("Selected electricity.")
             captureElectricityInput()
         case .household:
             print("Selected household.")
         case .displayFootprint:
-            print("Selected displayFootprint.")
             cfCalculator.displayFootprint()
+            calculatorView.displayCalculatorMenu()
         case .other:
             print("Selected other.")
         case .back:
             print("Selected go back.")
             showMainMenu.displayMenuOption()
+        case .zelda:
+            print("Oxytocin making it all okay...")
         }
 
     }
@@ -73,8 +55,8 @@ class CFCalculatorController {
         let userInteraction = UserInteraction()
         let calculatorView = CFCalculatorView()
         
-        if let distanceInput = userInteraction.promptDistance(),
-           let fuelConsumptionInput = userInteraction.promptFuelConsumption()
+        if let distanceInput = userInteraction.promptMessage(message: "|Enter distance travelled:"),
+           let fuelConsumptionInput = userInteraction.promptMessage(message: "|Enter fuel consumption:")
 //           let emissionFactorInput = userInteraction.promptEmissionFactor()
         {
             // unwrapping the optionals
@@ -84,8 +66,8 @@ class CFCalculatorController {
             
             let footprint = cfCalculator.calculateFootprintForTransport(distance: distance, fuelConsumption: fuelConsumption)
             cfCalculator.updateTotalFootprint(value: footprint)
-            print("Total footprint = \(cfCalculator.totalFootprint)")
-            calculatorView.showCategory()
+            print("Explicit Footprint values:\n\(cfCalculator.displayAllFootprint())")
+            calculatorView.displayCalculatorMenu()
         } else {
             print("Invalid input")
         }
@@ -105,7 +87,7 @@ class CFCalculatorController {
             let footprint = cfCalculator.calculateElectricityFootprint(totalElectricityUsage: electrictyUsage, carbonIntensityOfLocalGrid: carbonIntensity)
             cfCalculator.updateTotalFootprint(value: footprint)
             print("Total footprint after = \(cfCalculator.totalFootprint)") // After
-            calculatorView.showCategory()
+            calculatorView.displayCalculatorMenu()
         } else {
             print("Invalid input [else block]")
         }
@@ -123,6 +105,7 @@ enum  ActivityTypeOption: Int{
     case other = 5
     case displayFootprint = 6
     case back = 0
+    case zelda = 44
     
 }
 

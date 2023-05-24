@@ -18,7 +18,7 @@ class MenuController {
     func handleUserInput(selectedOption option: MenuOption) {
         switch option {
         case .calculateCarbonFootprint:
-            cfCalcualtorView.showCategory()
+            cfCalcualtorView.displayCalculatorMenu()
         case .carbonOffset:
 //            print("Debug - inside case .addFootprint")
             // TODO: Take user to the offset menu.

@@ -16,11 +16,11 @@ class LoginController {
         let logicView = LogicView()
         
         while !CredentialController.shared.isLoggedIn {
-            if let username = logicView.promptMessage(message: "Enter the username:"),
-               let password = logicView.promptMessage(message: "Enter the password: ") {
+            if let username = logicView.promptMessage(message: "> Enter the username:"),
+               let password = logicView.promptMessage(message: "> Enter the password: ") {
                 let user = User(username: username, password: password)
                 if CredentialController.shared.verifyCredentials(verifyUser: user) {
-                    logicView.showSuccessMessage(message: "/n[Logged in successfully!]")
+                    logicView.showSuccessMessage(message: "[Logged in successfully!]")
                     CredentialController.shared.isLoggedIn = true
                     CredentialController.shared.setUserLoggedIn(user: user)
                     // Taking user to menu...
@@ -36,19 +36,20 @@ class LoginController {
         
         let logicView = LogicView()
         
-        if let username = logicView.promptMessage(message: "Please enter the desired account name for creation:"),
-           let password = logicView.promptMessage(message: "Please create a password for your account:") {
+        if let username = logicView.promptMessage(message: "> Please enter the desired account name for creation:"),
+           let password = logicView.promptMessage(message: "> Please create a password for your account:") {
             let newUser = User(username: username, password: password)
             if !CredentialController.shared.existingUser(user: newUser) {
                 CredentialController.shared.addCredentials(newUser)
-                logicView.showSuccessMessage(message: "User created successfully.\nSign In")
+                logicView.showSuccessMessage(message: "[User created successfully.]\n\n| SIGN IN")
+                
                 loginUser()
             } else {
-                print("User already exists")
+                print("User already exists!")
                 createUser()
             }
         } else {
-            logicView.showErrorMessage(message: "Failed to create user.")
+            logicView.showErrorMessage(message: "Failed to create user!")
         }
         
     }

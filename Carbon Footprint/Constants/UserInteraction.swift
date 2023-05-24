@@ -23,21 +23,6 @@ class UserInteraction {
     
     // Write the functions that are gonna be used across the project.
     
-    func promptDistance() -> String? {
-        print("Enter distance travelled -")
-        return readLine()
-    }
-    
-    func promptFuelConsumption() -> String? {
-        print("Enter fuel consumption")
-        return readLine()
-    }
-    
-    func promptEmissionFactor() -> String? {
-        print("Enter emission factor")
-        return readLine()
-    }
-    
     func promptMessage(message: String) -> String? {
         print(message)
         return readLine()

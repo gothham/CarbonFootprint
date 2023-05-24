@@ -95,16 +95,22 @@ class CarbonFootprintCalculator {
     }
 
     func displayAllFootprint() {
-        print()
         print("Total Footprint is \(totalFootprint)")
         print("Transportation Footprint: \(transportationFootprint)")
         print("Electricity Footprint: \(electricityFootprint)")
     }
     
     func displayFootprint() {
+        
+        guard footprints.count > 0 else {
+            print("No footprints data.")
+            return
+        }
+        
         for footprint in footprints {
             print("(Footprint ID: \(footprint.footprintId), Activity type: \(footprint.activityType.type), Emission Value: \(footprint.emission))")
         }
+        
     }
     
 }

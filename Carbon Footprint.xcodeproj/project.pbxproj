@@ -22,6 +22,11 @@
 		5579A8142A13B95200DF19B5 /* CalculatorCategoryOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579A8132A13B95200DF19B5 /* CalculatorCategoryOption.swift */; };
 		5579A8162A14A3E500DF19B5 /* CFCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579A8152A14A3E500DF19B5 /* CFCalculatorController.swift */; };
 		55854C612A0E12F400D00A88 /* CredentialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55854C602A0E12F400D00A88 /* CredentialController.swift */; };
+		55B19C602A1E20F800402D03 /* CarbonGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B19C5F2A1E20F800402D03 /* CarbonGoal.swift */; };
+		55B19C622A1E212100402D03 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B19C612A1E212100402D03 /* Goal.swift */; };
+		55B19C642A1E43A400402D03 /* AddGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B19C632A1E43A400402D03 /* AddGoalController.swift */; };
+		55B19C682A1E44DB00402D03 /* GoalMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B19C672A1E44DB00402D03 /* GoalMenuController.swift */; };
+		55B19C6A2A1E44FE00402D03 /* GoalMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B19C692A1E44FE00402D03 /* GoalMenuView.swift */; };
 		55B2E54F2A0B707900E28469 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E54E2A0B707900E28469 /* User.swift */; };
 		55B2E5512A0B70B900E28469 /* LogicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E5502A0B70B900E28469 /* LogicView.swift */; };
 		55B2E5532A0B72CE00E28469 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E5522A0B72CE00E28469 /* LoginController.swift */; };
@@ -72,6 +77,11 @@
 		5579A8132A13B95200DF19B5 /* CalculatorCategoryOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCategoryOption.swift; sourceTree = "<group>"; };
 		5579A8152A14A3E500DF19B5 /* CFCalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFCalculatorController.swift; sourceTree = "<group>"; };
 		55854C602A0E12F400D00A88 /* CredentialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialController.swift; sourceTree = "<group>"; };
+		55B19C5F2A1E20F800402D03 /* CarbonGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonGoal.swift; sourceTree = "<group>"; };
+		55B19C612A1E212100402D03 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		55B19C632A1E43A400402D03 /* AddGoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalController.swift; sourceTree = "<group>"; };
+		55B19C672A1E44DB00402D03 /* GoalMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalMenuController.swift; sourceTree = "<group>"; };
+		55B19C692A1E44FE00402D03 /* GoalMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalMenuView.swift; sourceTree = "<group>"; };
 		55B2E54E2A0B707900E28469 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		55B2E5502A0B70B900E28469 /* LogicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicView.swift; sourceTree = "<group>"; };
 		55B2E5522A0B72CE00E28469 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -150,6 +160,7 @@
 		550E229B2A0B67770047A491 /* Carbon Footprint */ = {
 			isa = PBXGroup;
 			children = (
+				55B19C5B2A1E1FF900402D03 /* CarbonGoal */,
 				55D1B8A22A175608000A8346 /* CarbonOffset */,
 				550246BD2A14BDA70091D796 /* Menu */,
 				5579A8122A13B93D00DF19B5 /* Constants */,
@@ -249,6 +260,42 @@
 			isa = PBXGroup;
 			children = (
 				55B2E5522A0B72CE00E28469 /* LoginController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		55B19C5B2A1E1FF900402D03 /* CarbonGoal */ = {
+			isa = PBXGroup;
+			children = (
+				55B19C5E2A1E206B00402D03 /* Controller */,
+				55B19C5D2A1E204200402D03 /* View */,
+				55B19C5C2A1E203800402D03 /* Modal */,
+			);
+			path = CarbonGoal;
+			sourceTree = "<group>";
+		};
+		55B19C5C2A1E203800402D03 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				55B19C5F2A1E20F800402D03 /* CarbonGoal.swift */,
+				55B19C612A1E212100402D03 /* Goal.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		55B19C5D2A1E204200402D03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55B19C692A1E44FE00402D03 /* GoalMenuView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55B19C5E2A1E206B00402D03 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55B19C632A1E43A400402D03 /* AddGoalController.swift */,
+				55B19C672A1E44DB00402D03 /* GoalMenuController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -419,20 +466,25 @@
 				55B2E5532A0B72CE00E28469 /* LoginController.swift in Sources */,
 				55B2E54F2A0B707900E28469 /* User.swift in Sources */,
 				554625E02A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift in Sources */,
+				55B19C622A1E212100402D03 /* Goal.swift in Sources */,
 				55D1B8A92A175DB9000A8346 /* OffsetOption.swift in Sources */,
 				5579A80F2A13B41C00DF19B5 /* CarbonFootprintCalculator.swift in Sources */,
 				5579A8112A13B86300DF19B5 /* CFCalculatorView.swift in Sources */,
 				554625DD2A0D15760029A1C9 /* Co2eCalculatorController.swift in Sources */,
+				55B19C682A1E44DB00402D03 /* GoalMenuController.swift in Sources */,
 				55D1B8B72A1B2D58000A8346 /* Activity.swift in Sources */,
 				554625D12A0CCB2C0029A1C9 /* MenuOption.swift in Sources */,
+				55B19C6A2A1E44FE00402D03 /* GoalMenuView.swift in Sources */,
 				55D1B8BB2A1B9FE1000A8346 /* ActivityType.swift in Sources */,
 				55D1B8AF2A177CAD000A8346 /* CarbonCredit.swift in Sources */,
 				550246B92A14B2C90091D796 /* UserInteraction.swift in Sources */,
 				55854C612A0E12F400D00A88 /* CredentialController.swift in Sources */,
 				55B2E56E2A0BAE3700E28469 /* CarbonFootprintData.swift in Sources */,
+				55B19C642A1E43A400402D03 /* AddGoalController.swift in Sources */,
 				55D1B8A72A175A3D000A8346 /* CFOffsetView.swift in Sources */,
 				55B2E5702A0BAE8E00E28469 /* CarbonFootprintCategory.swift in Sources */,
 				5579A8162A14A3E500DF19B5 /* CFCalculatorController.swift in Sources */,
+				55B19C602A1E20F800402D03 /* CarbonGoal.swift in Sources */,
 				550E229D2A0B67770047A491 /* main.swift in Sources */,
 				55B2E56A2A0BAD9E00E28469 /* CarbonFootprintEntry.swift in Sources */,
 				55B2E55C2A0B9E2200E28469 /* CarbonCoreData.xcdatamodeld in Sources */,
