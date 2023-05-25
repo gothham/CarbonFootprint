@@ -11,7 +11,8 @@ enum MenuOption: Int {
     
     case calculateCarbonFootprint = 1
     case carbonOffset = 2
-    case logOut = 3
+    case manageGoal = 3
+    case logOut = 4
     case exit = 0
     
 }

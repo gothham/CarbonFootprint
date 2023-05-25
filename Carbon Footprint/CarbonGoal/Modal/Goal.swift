@@ -10,8 +10,8 @@ import Foundation
 struct Goal {
     
     let id: Int
+    let type: GoalMenuView.GoalType
     var progress: Double
-    let targetDate: Date
     let targetEmissionReduction: Double
     let reductionValue: Double = 0.0
     let description: String

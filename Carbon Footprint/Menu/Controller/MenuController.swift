@@ -14,9 +14,11 @@ class MenuController {
     let cfCalcualtorView = CFCalculatorView()
     let loginController = LoginController()
     let offsetView = CFOffsetView()
+    let goalMenuView = GoalMenuView()
     
     func handleUserInput(selectedOption option: MenuOption) {
         switch option {
+            
         case .calculateCarbonFootprint:
             cfCalcualtorView.displayCalculatorMenu()
         case .carbonOffset:
@@ -31,7 +33,10 @@ class MenuController {
 //            print(CredentialController.shared.getAllCredentials())
             CredentialController.shared.prepareLogOut()
             loginController.displayLoginMenu()
+        case .manageGoal:
+            goalMenuView.showGoalMenu()
         }
+        
     }
     
 }

@@ -9,15 +9,15 @@ import Foundation
 
 class CarbonGoal {
     
-    var goals: [Goal] = []
+    var goals: [Goal] = [/*Montero*/]
     
-    var nextGoalId: Int = 1
+    var nextGoalId: Int = 0
     
-    func addGoal(description: String, targetDate: Date, targetEmissionReduction: Double) {
+    func addGoal(description: String, targetEmissionReduction: Double, type: GoalMenuView.GoalType) {
         
         let goalId = getGoalId()
         
-        let goal = Goal(id: goalId, progress: 0, targetDate: targetDate, targetEmissionReduction: targetEmissionReduction, description: description)
+        let goal = Goal(id: goalId, type: type, progress: 0, targetEmissionReduction: targetEmissionReduction, description: description)
         
         goals.append(goal)
         
@@ -25,17 +25,19 @@ class CarbonGoal {
             
             var currentId = nextGoalId
             currentId += 1
+            nextGoalId = currentId
             return currentId
             
         }
-        
+
     }
     
     func addReductionValue(value: Double,to goalId: UUID) {
         // TODO: addReductionValue after fetching the correct goal using ID probably
     }
     
-    func displayGoal() {
+    
+    func displayAllGoal() {
         
         guard !goals.isEmpty else {
             print("No active goals.")
@@ -43,7 +45,7 @@ class CarbonGoal {
         }
         
         for goal in goals {
-            print("Goal ID: \(goal.id), Progress: \(goal.progress), Target Date: \(goal.targetDate), Target Emission Reduction: \(goal.targetEmissionReduction),Description: \(goal.description)")
+            print("(Goal ID: \(goal.id), Type: \(goal.type), Progress: \(goal.progress), Target Emission Reduction: \(goal.targetEmissionReduction),Description: \(goal.description))")
         }
         
     }

@@ -55,12 +55,6 @@ class CarbonFootprintCalculator {
         
     }
     
-    /*func calculateFootprintForTransport(distance: Double, fuelConsumption: Double, emissionFactor: Double) -> Double {
-        let carbonFootprint = distance * fuelConsumption * emissionFactor
-        
-        return carbonFootprint
-    }*/
-    
     func calculateFootprintForTransport(distance: Double, fuelConsumption: Double) -> Double {
         
         let carbonFootprint = distance * fuelConsumption * FootprintConstant.shared.publicEmissionFactor

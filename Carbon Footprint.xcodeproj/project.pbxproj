@@ -25,7 +25,6 @@
 		55B19C602A1E20F800402D03 /* CarbonGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B19C5F2A1E20F800402D03 /* CarbonGoal.swift */; };
 		55B19C622A1E212100402D03 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B19C612A1E212100402D03 /* Goal.swift */; };
 		55B19C642A1E43A400402D03 /* AddGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B19C632A1E43A400402D03 /* AddGoalController.swift */; };
-		55B19C682A1E44DB00402D03 /* GoalMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B19C672A1E44DB00402D03 /* GoalMenuController.swift */; };
 		55B19C6A2A1E44FE00402D03 /* GoalMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B19C692A1E44FE00402D03 /* GoalMenuView.swift */; };
 		55B2E54F2A0B707900E28469 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E54E2A0B707900E28469 /* User.swift */; };
 		55B2E5512A0B70B900E28469 /* LogicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E5502A0B70B900E28469 /* LogicView.swift */; };
@@ -80,7 +79,6 @@
 		55B19C5F2A1E20F800402D03 /* CarbonGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonGoal.swift; sourceTree = "<group>"; };
 		55B19C612A1E212100402D03 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		55B19C632A1E43A400402D03 /* AddGoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalController.swift; sourceTree = "<group>"; };
-		55B19C672A1E44DB00402D03 /* GoalMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalMenuController.swift; sourceTree = "<group>"; };
 		55B19C692A1E44FE00402D03 /* GoalMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalMenuView.swift; sourceTree = "<group>"; };
 		55B2E54E2A0B707900E28469 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		55B2E5502A0B70B900E28469 /* LogicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicView.swift; sourceTree = "<group>"; };
@@ -295,7 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				55B19C632A1E43A400402D03 /* AddGoalController.swift */,
-				55B19C672A1E44DB00402D03 /* GoalMenuController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -471,7 +468,6 @@
 				5579A80F2A13B41C00DF19B5 /* CarbonFootprintCalculator.swift in Sources */,
 				5579A8112A13B86300DF19B5 /* CFCalculatorView.swift in Sources */,
 				554625DD2A0D15760029A1C9 /* Co2eCalculatorController.swift in Sources */,
-				55B19C682A1E44DB00402D03 /* GoalMenuController.swift in Sources */,
 				55D1B8B72A1B2D58000A8346 /* Activity.swift in Sources */,
 				554625D12A0CCB2C0029A1C9 /* MenuOption.swift in Sources */,
 				55B19C6A2A1E44FE00402D03 /* GoalMenuView.swift in Sources */,
