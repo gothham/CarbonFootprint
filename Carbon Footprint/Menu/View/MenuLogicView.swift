@@ -11,8 +11,10 @@ class MenuLogicView {
     
     // MARK: Change the menu options here
     func displayMenuOption() {
+        
+        let appName = "CO\u{2082}e"
         print("|--------------------------------|")
-        print("|    Welcome to the Co2e app.    |")
+        print("|    Welcome to the \(appName) app.    |")
         print("|--------------------------------|")
         print("> 0. Exit")
         print("> 1. Calculate carbon footprint.")

@@ -17,7 +17,7 @@ class CarbonGoal {
         
         let goalId = getGoalId()
         
-        let goal = Goal(id: goalId, type: type, progress: 0, targetEmissionReduction: targetEmissionReduction, description: description)
+        let goal = Goal(id: goalId, type: type, progress: 0, targetEmissionReduction: targetEmissionReduction, description: description, targetLeft: targetEmissionReduction)
         
         goals.append(goal)
         
@@ -45,9 +45,35 @@ class CarbonGoal {
         }
         
         for goal in goals {
-            print("(Goal ID: \(goal.id), Type: \(goal.type), Progress: \(goal.progress), Target Emission Reduction: \(goal.targetEmissionReduction),Description: \(goal.description))")
+            print("(Goal ID: \(goal.id), Type: \(goal.type), Progress: \(goal.progress)%, Target Emission Reduction: \(goal.targetEmissionReduction),Description: \(goal.description), Target Left: \(goal.targetLeft))")
         }
         
     }
     
+    func fetchGoal(withId goalId: Int) -> Goal? {
+        
+        return goals.first(where: { $0.id == goalId})
+        
+    }
+    
+    // Method for updating the progress 
+    func udpateGoalProgress(index: Int, reductionValue: Double) {
+        
+        if let index = goals.firstIndex(where: {$0.id == index}) {
+            goals[index].updateProgress(with: reductionValue)
+        }
+            
+    }
+    
+    func checkForActiveGoal() -> Bool {
+        // return true if the array is empty
+        return !goals.isEmpty
+        
+    }
+    
+    func displayExplicitGoal(goal: Goal) {
+        
+        print("(Goal ID: \(goal.id), Type: \(goal.type), Progress: \(goal.progress)%, Target Emission Reduction: \(goal.targetEmissionReduction),Description: \(goal.description), Target Left: \(goal.targetLeft))")
+        
+    }
 }

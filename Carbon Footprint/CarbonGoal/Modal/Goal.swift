@@ -13,13 +13,17 @@ struct Goal {
     let type: GoalMenuView.GoalType
     var progress: Double
     let targetEmissionReduction: Double
-    let reductionValue: Double = 0.0
+    var reductionValue: Double = 0.0
     let description: String
+    var targetLeft: Double
     
-    mutating func updateProgress(with reductionValue: Double) {
+    mutating func updateProgress(with emissionValue: Double) {
         
-        let leftOverEmissionValue = targetEmissionReduction - reductionValue
-        progress = (leftOverEmissionValue/100) * targetEmissionReduction
+        guard emissionValue <= targetEmissionReduction else { return }
+        
+        self.reductionValue += emissionValue
+        self.progress = (reductionValue/targetEmissionReduction) * 100
+        self.targetLeft = targetEmissionReduction - reductionValue
         
     }
     

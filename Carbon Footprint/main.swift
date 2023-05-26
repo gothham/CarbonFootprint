@@ -7,11 +7,10 @@
 
 import Foundation
 
-//let viewFlow = ViewFlow()
-let test = LoginController()
-test.displayLoginMenu()
 
-//viewFlow.run()
+let loginController = LoginController()
+// MARK: App starts here.
+loginController.displayLoginMenu()
 
-//let menu = MenuLogicView()
-//menu.displayMenuOption()
+
+

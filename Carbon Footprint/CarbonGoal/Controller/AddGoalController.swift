@@ -27,10 +27,92 @@ class AddGoalController {
             carbonGoal.displayAllGoal()
             goalMenuView.showGoalMenu()
             
-            
         } else {
+            
             print("Invalid input!")
             goalMenuView.showGoalMenu()
+            
+        }
+        
+    }
+    
+    
+    func handleFetchGoalCase() {
+        
+        let goalMenuView = GoalMenuView()
+        let getUserInput = UserInteraction()
+        
+        // providing an early exist if there are no goals.
+        guard carbonGoal.checkForActiveGoal() == true else {
+            print("No active goals found!")
+            goalMenuView.showGoalMenu()
+            return
+        }
+        
+        carbonGoal.displayAllGoal()
+        
+        if let indexInput = getUserInput.promptMessage(message: "Enter goal id:") {
+            
+            // type casting (I think so)
+            guard let input = Int(indexInput) else {
+                goalMenuView.showGoalMenu()
+                return
+            }
+            
+            guard let result = carbonGoal.fetchGoal(withId: input) else {
+                print("No goals found! Try giving the index correctly.")
+                carbonGoal.displayAllGoal()
+                goalMenuView.showGoalMenu()
+                return
+            }
+            
+            carbonGoal.displayExplicitGoal(goal: result)
+            
+            goalMenuView.showGoalMenu()
+            
+        } else {
+            
+            print("Invalid input!")
+            goalMenuView.showGoalMenu()
+            
+        }
+        
+    }
+    
+    func handleUpdateProgressCase() {
+        
+        let goalMenuView = GoalMenuView()
+        let getUserInput = UserInteraction()
+        
+        guard carbonGoal.checkForActiveGoal() == true else {
+            print("No active goals found!")
+            goalMenuView.showGoalMenu()
+            return
+        }
+        
+        if let indexInput = getUserInput.promptMessage(message: "Enter the goal id:"),
+           let reductionInput = getUserInput.promptMessage(message: "Enter the reduction emission value:") {
+            
+            guard let input = Int(indexInput) else {
+                goalMenuView.showGoalMenu()
+                return
+            }
+            
+            guard let reductionValue = Double(reductionInput) else {
+                goalMenuView.showGoalMenu()
+                return
+            }
+            
+            carbonGoal.udpateGoalProgress(index: input, reductionValue: reductionValue)
+            
+            carbonGoal.displayAllGoal()
+            goalMenuView.showGoalMenu()
+            
+        } else {
+            
+            print("Invalid input!")
+            goalMenuView.showGoalMenu()
+            
         }
         
     }
@@ -55,8 +137,13 @@ class AddGoalController {
         case .displayAllGoals:
             carbonGoal.displayAllGoal()
             goalMenu.showGoalMenu()
+        case .fetchGoal:
+            handleFetchGoalCase()
+        case .updateGoal:
+            handleUpdateProgressCase()
         case .goBack:
             menuView.displayMenuOption()
+            
         }
         
     }

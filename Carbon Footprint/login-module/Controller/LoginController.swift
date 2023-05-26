@@ -65,6 +65,7 @@ class LoginController {
             handleLoginOption(selectedOption: option)
             } else {
                 print("[Error message 👾!] Invalid input.")
+                displayLoginMenu()
             }
     }
     
