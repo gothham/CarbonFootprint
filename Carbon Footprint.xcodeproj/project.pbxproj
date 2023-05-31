@@ -122,13 +122,13 @@
 			path = Later;
 			sourceTree = "<group>";
 		};
-		550246BD2A14BDA70091D796 /* Menu */ = {
+		550246BD2A14BDA70091D796 /* menu-lodule */ = {
 			isa = PBXGroup;
 			children = (
 				55F783F52A163309000E4158 /* Controller */,
 				550246BF2A14BDC80091D796 /* View */,
 			);
-			path = Menu;
+			path = "menu-lodule";
 			sourceTree = "<group>";
 		};
 		550246BF2A14BDC80091D796 /* View */ = {
@@ -158,11 +158,11 @@
 		550E229B2A0B67770047A491 /* Carbon Footprint */ = {
 			isa = PBXGroup;
 			children = (
-				55B19C5B2A1E1FF900402D03 /* CarbonGoal */,
-				55D1B8A22A175608000A8346 /* CarbonOffset */,
-				550246BD2A14BDA70091D796 /* Menu */,
+				55B19C5B2A1E1FF900402D03 /* carbon-goal-module */,
+				55D1B8A22A175608000A8346 /* carbon-offset-module */,
+				550246BD2A14BDA70091D796 /* menu-lodule */,
 				5579A8122A13B93D00DF19B5 /* Constants */,
-				5579A80A2A13B36800DF19B5 /* CarbonCalculator */,
+				5579A80A2A13B36800DF19B5 /* carbon-calculator-module */,
 				550E229C2A0B67770047A491 /* main.swift */,
 				55854C5C2A0E088E00D00A88 /* login-module */,
 				550246BC2A14BD880091D796 /* Later */,
@@ -179,14 +179,14 @@
 			path = "calculator-module";
 			sourceTree = "<group>";
 		};
-		5579A80A2A13B36800DF19B5 /* CarbonCalculator */ = {
+		5579A80A2A13B36800DF19B5 /* carbon-calculator-module */ = {
 			isa = PBXGroup;
 			children = (
 				5579A80D2A13B39300DF19B5 /* Controller */,
 				5579A80C2A13B38B00DF19B5 /* Model */,
 				5579A80B2A13B38500DF19B5 /* View */,
 			);
-			path = CarbonCalculator;
+			path = "carbon-calculator-module";
 			sourceTree = "<group>";
 		};
 		5579A80B2A13B38500DF19B5 /* View */ = {
@@ -262,14 +262,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		55B19C5B2A1E1FF900402D03 /* CarbonGoal */ = {
+		55B19C5B2A1E1FF900402D03 /* carbon-goal-module */ = {
 			isa = PBXGroup;
 			children = (
 				55B19C5E2A1E206B00402D03 /* Controller */,
 				55B19C5D2A1E204200402D03 /* View */,
 				55B19C5C2A1E203800402D03 /* Modal */,
 			);
-			path = CarbonGoal;
+			path = "carbon-goal-module";
 			sourceTree = "<group>";
 		};
 		55B19C5C2A1E203800402D03 /* Modal */ = {
@@ -345,14 +345,14 @@
 			path = "user-model";
 			sourceTree = "<group>";
 		};
-		55D1B8A22A175608000A8346 /* CarbonOffset */ = {
+		55D1B8A22A175608000A8346 /* carbon-offset-module */ = {
 			isa = PBXGroup;
 			children = (
 				55D1B8A52A175666000A8346 /* Controller */,
 				55D1B8A42A175662000A8346 /* View */,
 				55D1B8A32A17565A000A8346 /* Modal */,
 			);
-			path = CarbonOffset;
+			path = "carbon-offset-module";
 			sourceTree = "<group>";
 		};
 		55D1B8A32A17565A000A8346 /* Modal */ = {

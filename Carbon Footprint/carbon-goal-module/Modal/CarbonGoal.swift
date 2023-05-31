@@ -9,6 +9,8 @@ import Foundation
 
 class CarbonGoal {
     
+    let cfCalculator = CarbonFootprintCalculator()
+    
     var goals: [Goal] = [/*Montero*/]
     
     var nextGoalId: Int = 0
@@ -62,6 +64,8 @@ class CarbonGoal {
         if let index = goals.firstIndex(where: {$0.id == index}) {
             goals[index].updateProgress(with: reductionValue)
         }
+        
+        cfCalculator.reduceTotalFootprint(with: reductionValue)
             
     }
     
@@ -76,4 +80,5 @@ class CarbonGoal {
         print("(Goal ID: \(goal.id), Type: \(goal.type), Progress: \(goal.progress)%, Target Emission Reduction: \(goal.targetEmissionReduction),Description: \(goal.description), Target Left: \(goal.targetLeft))")
         
     }
+    
 }

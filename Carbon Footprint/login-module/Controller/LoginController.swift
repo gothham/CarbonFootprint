@@ -38,18 +38,25 @@ class LoginController {
         
         if let username = logicView.promptMessage(message: "> Please enter the desired account name for creation:"),
            let password = logicView.promptMessage(message: "> Please create a password for your account:") {
+            
             let newUser = User(username: username, password: password)
             if !CredentialController.shared.existingUser(user: newUser) {
+                
                 CredentialController.shared.addCredentials(newUser)
                 logicView.showSuccessMessage(message: "[User created successfully.]\n\n| SIGN IN")
                 
                 loginUser()
+                
             } else {
+                
                 print("User already exists!")
                 createUser()
+                
             }
         } else {
+            
             logicView.showErrorMessage(message: "Failed to create user!")
+            
         }
         
     }
@@ -57,15 +64,17 @@ class LoginController {
     func displayLoginMenu() {
         print("1. Create account.")
         print("2. Already have an account? Login now.")
-//        print("Debug info - \(CredentialController.shared.getAllCredentials())")
-        // accepting user input
+        
         if let userInput = readLine(),
          let selectedOption = Int(userInput),
             let option = LoginOption(rawValue: selectedOption) {
+            
             handleLoginOption(selectedOption: option)
+            
             } else {
                 print("[Error message 👾!] Invalid input.")
                 displayLoginMenu()
+                
             }
     }
     

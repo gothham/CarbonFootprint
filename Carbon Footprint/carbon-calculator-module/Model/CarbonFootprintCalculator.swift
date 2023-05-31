@@ -21,7 +21,7 @@ class CarbonFootprintCalculator {
     
     var nextFootprintId: Int = 1
     
-    var footprints: [CarbonFootprint] = [] // all the footprintys will be add here
+    var footprints: [CarbonFootprint] = [] // all the footprinty will be add here
     
     
     // TODO: Make this function working...
@@ -106,6 +106,13 @@ class CarbonFootprintCalculator {
         }
         
     }
+    
+    func reduceTotalFootprint(with value: Double) {
+        
+        totalFootprint -= value
+        print("Total footprint = \(totalFootprint)")
+    }
+    
     
 }
 

@@ -26,6 +26,7 @@ class MenuLogicView {
     }
     
     func getUserInput() {
+        
         let carbonFootprintController = MenuController()
         if let input = readLine(),let userInput = Int(input), let option = MenuOption(rawValue: userInput) {
             carbonFootprintController.handleUserInput(selectedOption: option)
@@ -33,5 +34,6 @@ class MenuLogicView {
             print("Invalid input! Please try again.")
             displayMenuOption()
         }
+        
     }
 }
