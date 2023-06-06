@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct CFOffsetView {
+class CFOffsetView {
     
-    let offsetController = CFOffsetController()
+    static let shared = CFOffsetView()
+    
+//    let offsetController = CFOffsetController()
     
     func displayOffsetMenu() {
         print()
@@ -20,7 +22,7 @@ struct CFOffsetView {
         
         // TODO: Handle user inputs
         if let userInput = readLine(), let input = Int(userInput), let selectedOption = OffsetOption(rawValue: input) {
-            offsetController.handleUserInput(selectedOption: selectedOption)
+            CFOffsetController.shared.handleUserInput(selectedOption: selectedOption)
         }
     }
 }

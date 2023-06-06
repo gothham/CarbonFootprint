@@ -9,11 +9,27 @@ import Foundation
 
 class OffsetManager {
     
+    var profitPrice: Double = 0.0
+    
+    var totalCreditsSold: Int = 0
+    
+    var totalCreditsPurchased: Int = 0
+    
+    var totalAmountInvested: Double = 0.0
+    
+    var soldCarbonCredits: [CarbonCredit] = []
+    
     var carbonCredits: [CarbonCredit] = [
         CarbonCredit(quantity: 10, price: 10.0),
         CarbonCredit(quantity: 5, price: 15.0),
         CarbonCredit(quantity: 20, price: 250.25)
     ]
+    
+    enum TotalValue {
+        
+        case sellingProfit, creditsSold, creditsPurchased, amountInvested
+        
+    }
     
     func showAvailableCredits() {
         print("Available carbon credits.")
@@ -52,21 +68,56 @@ class OffsetManager {
         
     }
     
-    func sellCarbonCredits(atIndex: Int, quantity: Int, price: Double) {
+    func showSoldCarbonCredit() {
         
-        guard atIndex >= 0 && atIndex < carbonCredits.count else {
-            print("Invalid credit index.")
-            return
+        print("Sold credits:")
+        for (index, credit) in soldCarbonCredits.enumerated() {
+            print("\(index + 1). Quantity = \(credit.quantity), Price = \(credit.price)")
         }
         
-        var credit = carbonCredits[atIndex]
+    }
+    
+    func sellCarbonCredits(quantity: Int, price: Double) {
         
-        credit.quantity += quantity
-        credit.price += price
+        let totalPrice = Double(quantity) * price
         
-        carbonCredits[atIndex] = credit
+        let soldCarbonCredit = CarbonCredit(quantity: quantity, price: totalPrice)
         
-        print("Selling \(quantity) carbon credits for $\(price)")
+        updateValue(value: totalPrice, for: .sellingProfit)
+        updateValue(value: quantity, for: .creditsSold)
+        print("Credits sold = \(totalCreditsSold), Selling profit = \(profitPrice)")
+        
+        soldCarbonCredits.append(soldCarbonCredit)
+        
+        showSoldCarbonCredit()
         
     }
+    
+    func updateValue<T: Numeric> (value: T, for type: TotalValue) {
+        
+        switch type {
+            
+        case .sellingProfit:
+            if let value = value as? Double {
+                profitPrice += value
+            }
+        case .creditsSold:
+            if let value = value as? Int {
+                totalCreditsSold += value
+            }
+        case .creditsPurchased:
+            if let value = value as? Int {
+                totalCreditsPurchased += value
+            }
+            
+        case .amountInvested:
+            if let value = value as? Double {
+                totalAmountInvested += value
+            }
+            
+        }
+        
+    }
+    
+    
 }

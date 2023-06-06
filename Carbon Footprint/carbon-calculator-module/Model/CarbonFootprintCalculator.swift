@@ -26,12 +26,12 @@ class CarbonFootprintCalculator {
     
     // TODO: Make this function working...
     // method to add footprint to the footprints array
-    func addCarbonFootprint(activityType: ActivityType, emission: Double) {
+    func addCarbonFootprint(activityType: ActivityType, emission: Double, modeOfTransportation: TransportationType) {
         
         let footprintId = getNextFootprintId()
         let activity = Activity(type: activityType, emissionFactor: FootprintConstant.shared)
         
-        let newCarbonFootprint = CarbonFootprint(footprintId: footprintId, activityType: activity, emission: emission)
+        let newCarbonFootprint = CarbonFootprint(footprintId: footprintId, activityType: activity, emission: emission, transportationMode: modeOfTransportation)
         
         // Appending to the array.
         footprints.append(newCarbonFootprint)
@@ -55,18 +55,42 @@ class CarbonFootprintCalculator {
         
     }
     
-    func calculateFootprintForTransport(distance: Double, fuelConsumption: Double) -> Double {
+    func calculateFootprintForTransport(distance: Double, modeOfTransport: TransportationType) -> Double {
         
-        let carbonFootprint = distance * fuelConsumption * FootprintConstant.shared.publicEmissionFactor
-        addCarbonFootprint(activityType: .transportation, emission: carbonFootprint)
-        // printing the footprints array
+        let mileage = ModeOfTransportMileage()
+        
+        var fuelConsumption: Double = 0.0
+        
+        switch modeOfTransport {
+        case .car:
+            fuelConsumption = distance * mileage.carMileage
+        case .motorcycle:
+            fuelConsumption = distance * mileage.motorcycleMileage
+        case .publicTransport:
+            fuelConsumption = distance * mileage.publicTransportMileage
+        case .walking:
+            print("Walking haha, 0 mileage bruh!")
+        case .cycling:
+            print("Use brains... You dumbass!")
+        case .airTravel:
+            fuelConsumption = distance * mileage.airTravelMileage
+        case .none:
+            print("Eat five star do nothing!")
+        }
+
+        let carbonFootprint = distance * FootprintConstant.shared.publicEmissionFactor * fuelConsumption
+        
+        addCarbonFootprint(activityType: .transportation, emission: carbonFootprint, modeOfTransportation: modeOfTransport)
+        
         displayFootprint()
+        
         return carbonFootprint
+        
     }
     
     func calculateElectricityFootprint(totalElectricityUsage: Double, carbonIntensityOfLocalGrid: Double) -> Double{
         let carbonFootprint = totalElectricityUsage * carbonIntensityOfLocalGrid
-        addCarbonFootprint(activityType: .electricity, emission: carbonFootprint)
+        addCarbonFootprint(activityType: .electricity, emission: carbonFootprint, modeOfTransportation: .none)
         displayFootprint()
         return carbonFootprint
     }
@@ -88,12 +112,16 @@ class CarbonFootprintCalculator {
         }
     }
 
+    // MARK: Display explicit footprints
     func displayAllFootprint() {
-        print("Total Footprint is \(totalFootprint)")
-        print("Transportation Footprint: \(transportationFootprint)")
-        print("Electricity Footprint: \(electricityFootprint)")
+        
+        print("Total Footprint is \(totalFootprint) kg of Co2e.")
+        print("Transportation Footprint: \(transportationFootprint) kg of Co2e.")
+        print("Electricity Footprint: \(electricityFootprint) kg of Co2e.")
+        
     }
     
+    // MARK: Display footprints
     func displayFootprint() {
         
         guard footprints.count > 0 else {
@@ -102,7 +130,7 @@ class CarbonFootprintCalculator {
         }
         
         for footprint in footprints {
-            print("(Footprint ID: \(footprint.footprintId), Activity type: \(footprint.activityType.type), Emission Value: \(footprint.emission))")
+            print("(Footprint ID: \(footprint.footprintId), Activity type: \(footprint.activityType.type), Emission Value: \(footprint.emission), Mode of transportation: \(footprint.transportationMode)")
         }
         
     }

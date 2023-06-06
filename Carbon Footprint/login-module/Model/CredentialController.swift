@@ -15,7 +15,7 @@ class CredentialController {
     
     private var loggedInUser: User?
     
-    var credentials: [String: String] = ["Admin": "noobMaster69", "SuperAdmin": "proMaster69"]
+    var credentials: [String: String] = ["Admin": "noobMaster69", "SuperAdmin": "proMaster69","q": "q"]
     
     func addCredentials(_ credentials: User) {
         self.credentials[credentials.username] = credentials.password

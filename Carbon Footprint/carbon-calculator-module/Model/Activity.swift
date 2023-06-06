@@ -10,6 +10,7 @@ import Foundation
 struct Activity {
     
     let type: ActivityType
+    
     let emissionFactor: FootprintConstant
     
 }

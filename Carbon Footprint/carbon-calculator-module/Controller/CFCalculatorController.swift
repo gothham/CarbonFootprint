@@ -8,7 +8,7 @@
 //TODO: excute the below statements
 /*
  1) Type of footprint that's gonna be added. (Done)
- 2) Get the inputs for the user according the activity type.
+ 2) Get the inputs for the user according the activity type.(Done)
  3) Do the calculation internally and add the footprint array. (Done)
  4) Fetch the footprint and display it to the user. (Done)
  5) Searching the footprint.
@@ -22,6 +22,8 @@ class CFCalculatorController {
     
     let cfCalculator = CarbonFootprintCalculator()
     
+    let view = CFCalculatorView()
+    
     func handleUserInputForType(option: ActivityTypeOption) {
         
         let showMainMenu = MenuLogicView()
@@ -30,7 +32,8 @@ class CFCalculatorController {
         switch option {
             
         case .transportation:
-            captureTransportInput()
+//            captureTransportInput()
+            calcTransfoot()
         case .diet:
             print("Selected diet.")
         case .electricity:
@@ -51,34 +54,35 @@ class CFCalculatorController {
 
     }
     
-    func captureTransportInput() {
+    func captureTransportInput(modeOfTransportation type: TransportationType) {
+        
         let userInteraction = UserInteraction()
         let calculatorView = CFCalculatorView()
         
-        if let distanceInput = userInteraction.promptMessage(message: "|Enter distance travelled:"),
-           let fuelConsumptionInput = userInteraction.promptMessage(message: "|Enter fuel consumption:")
-//           let emissionFactorInput = userInteraction.promptEmissionFactor()
-        {
-            // unwrapping the optionals
-            guard let distance = Double(distanceInput) else { return }
-            guard let fuelConsumption = Double(fuelConsumptionInput) else { return }
-//            guard let emissionFactor = Double(emissionFactorInput) else { return }
+        if let distanceInput = userInteraction.promptMessage(message: "|Enter distance travelled (in Km):") {
             
-            let footprint = cfCalculator.calculateFootprintForTransport(distance: distance, fuelConsumption: fuelConsumption)
+            guard let distance = Double(distanceInput) else { return }
+            
+            let footprint = cfCalculator.calculateFootprintForTransport(distance: distance, modeOfTransport: type)
+            
             cfCalculator.updateTotalFootprint(value: footprint)
-            print("Explicit Footprint values:\n\(cfCalculator.displayAllFootprint())")
+            
             calculatorView.displayCalculatorMenu()
+            
         } else {
+            
             print("Invalid input")
+            
         }
+        
     }
 
     func captureElectricityInput() {
         let userInteraction = UserInteraction()
         let calculatorView = CFCalculatorView()
         
-        if let electricityUsageInput = userInteraction.promptMessage(message: "Enter total electricity usage in kWh."),
-        let carbonIntensityInput = userInteraction.promptMessage(message: "Enter the carbon intensity of local grid in kg CO2/kWh") {
+        if let electricityUsageInput = userInteraction.promptMessage(message: "Enter total electricity usage (in kWh)."),
+        let carbonIntensityInput = userInteraction.promptMessage(message: "Enter the carbon intensity of local grid (in kg CO2/kWh)") {
             // unwrapping the optionals
             guard let electrictyUsage = Double(electricityUsageInput) else { return }
             guard let carbonIntensity = Double(carbonIntensityInput) else { return }
@@ -91,6 +95,34 @@ class CFCalculatorController {
         } else {
             print("Invalid input [else block]")
         }
+    }
+    
+    func calcTransfoot() {
+        
+        let view = CFCalculatorView()
+        
+        if let selectedMode = view.promptForTransportationMode() {
+            switch selectedMode {
+            case .car:
+                captureTransportInput(modeOfTransportation: .car)
+            case .motorcycle:
+                captureTransportInput(modeOfTransportation: .motorcycle)
+            case .publicTransport:
+                captureTransportInput(modeOfTransportation: .publicTransport)
+            case .walking:
+                print("Handle walking")
+            case .cycling:
+                print("Handle cycling")
+            case .airTravel:
+                captureTransportInput(modeOfTransportation: .airTravel)
+            case .none:
+                view.displayCalculatorMenu()
+            }
+        } else {
+            print("Invalid input")
+            calcTransfoot()
+        }
+        
     }
     
 }
