@@ -130,7 +130,7 @@ class CarbonFootprintCalculator {
         }
         
         for footprint in footprints {
-            print("(Footprint ID: \(footprint.footprintId), Activity type: \(footprint.activityType.type), Emission Value: \(footprint.emission), Mode of transportation: \(footprint.transportationMode)")
+            print("(Footprint ID: \(footprint.footprintId), Activity type: \(footprint.activityType.type), Emission Value: \(footprint.emission), Mode of transportation: \(footprint.transportationMode))")
         }
         
     }

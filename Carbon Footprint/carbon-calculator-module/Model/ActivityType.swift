@@ -10,7 +10,11 @@ import Foundation
 enum ActivityType {
 
     case transportation
-    case diet
+    
     case electricity
+    
+    case diet
+    
+    
 
 }

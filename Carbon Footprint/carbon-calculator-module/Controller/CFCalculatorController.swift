@@ -5,24 +5,22 @@
 //  Created by doss-zstch1212 on 17/05/23.
 //
 
-//TODO: excute the below statements
-/*
- 1) Type of footprint that's gonna be added. (Done)
- 2) Get the inputs for the user according the activity type.(Done)
- 3) Do the calculation internally and add the footprint array. (Done)
- 4) Fetch the footprint and display it to the user. (Done)
- 5) Searching the footprint.
- */
-
 import Foundation
 
 class CFCalculatorController {
     
+    // Singleton class
     static let shared = CFCalculatorController()
+    
+    // MARK: Instances.
     
     let cfCalculator = CarbonFootprintCalculator()
     
+    let carbonFootprintData = CarbonFootprintData()
+    
     let view = CFCalculatorView()
+    
+    // MARK: Methods to handle user into and interate with the modal.
     
     func handleUserInputForType(option: ActivityTypeOption) {
         
@@ -30,10 +28,8 @@ class CFCalculatorController {
         let calculatorView = CFCalculatorView()
         
         switch option {
-            
         case .transportation:
-//            captureTransportInput()
-            calcTransfoot()
+            navigateFrequencyMode()
         case .diet:
             print("Selected diet.")
         case .electricity:
@@ -54,26 +50,93 @@ class CFCalculatorController {
 
     }
     
-    func captureTransportInput(modeOfTransportation type: TransportationType) {
+    func navigateTransportMode(frequencyType: CarbonFootprintData.FootprintFrequency) {
+        
+        let view = CFCalculatorView()
+        
+        if let selectedMode = view.promptForTransportationMode() {
+            switch selectedMode {
+            case .car:
+                captureTransportInput(modeOfTransportation: .car, frequencyType: frequencyType)
+            case .motorcycle:
+                captureTransportInput(modeOfTransportation: .motorcycle, frequencyType: frequencyType)
+            case .publicTransport:
+                captureTransportInput(modeOfTransportation: .publicTransport, frequencyType: frequencyType)
+            case .walking:
+                print("Handle walking")
+            case .cycling:
+                print("Handle cycling")
+            case .airTravel:
+                captureTransportInput(modeOfTransportation: .airTravel, frequencyType: frequencyType)
+            }
+        } else {
+            print("Invalid input")
+        }
+        
+    }
+    
+    
+    func navigateFrequencyMode() {
+        
+        let view = CFCalculatorView()
+        
+        if let selectedMode = view.promptForFrequencyType() {
+            switch selectedMode {
+            case .regular:
+                navigateTransportMode(frequencyType: .regular)
+            case .nonRegular:
+                navigateTransportMode(frequencyType: .nonRegular)
+            }
+        }
+    }
+    
+    
+    // MARK: methods for capturing user inputs.
+    
+    func captureTransportInput(modeOfTransportation type: TransportData.TransportType, frequencyType: CarbonFootprintData.FootprintFrequency) {
         
         let userInteraction = UserInteraction()
         let calculatorView = CFCalculatorView()
+        let footprint: Double
         
-        if let distanceInput = userInteraction.promptMessage(message: "|Enter distance travelled (in Km):") {
-            
-            guard let distance = Double(distanceInput) else { return }
-            
-            let footprint = cfCalculator.calculateFootprintForTransport(distance: distance, modeOfTransport: type)
-            
-            cfCalculator.updateTotalFootprint(value: footprint)
-            
-            calculatorView.displayCalculatorMenu()
-            
-        } else {
-            
-            print("Invalid input")
+        switch frequencyType {
+        case .regular:
+            print("Inside regular capture input method.")
+            if let distanceInput = userInteraction.promptMessage(message: "|Enter distance travelled (in Km):"),
+               let frequencyInput = userInteraction.promptMessage(message: "|Enter the frequency of travel:") {
+                
+                guard let frequency = Int(frequencyInput) else { return }
+                guard let distance = Double(distanceInput) else { return }
+                
+                footprint = carbonFootprintData.calculateTransportationEmission(distance: distance, transportMode: type, frequency: frequency, frequencyType: .regular)
+                carbonFootprintData.addCarbonFootprint(type: .transport, emissionValue: footprint, frequencyType: frequencyType)
+                
+            } else {
+                
+                print("Invalid input")
+                
+            }
+        case .nonRegular:
+            print("Inside nonregular capture input method.")
+            if let distanceInput = userInteraction.promptMessage(message: "|Enter distance travelled (in Km):") {
+                
+                guard let distance = Double(distanceInput) else { return }
+                
+                footprint = carbonFootprintData.calculateTransportationEmission(distance: distance, transportMode: type, frequency: 1, frequencyType: .nonRegular)
+                carbonFootprintData.addCarbonFootprint(type: .transport, emissionValue: footprint, frequencyType: frequencyType)
+                
+            } else {
+                
+                print("Invalid input")
+                
+            }
             
         }
+        
+        // Displaying footprints.
+        carbonFootprintData.displayFootprint()
+        
+        calculatorView.displayCalculatorMenu()
         
     }
 
@@ -87,42 +150,17 @@ class CFCalculatorController {
             guard let electrictyUsage = Double(electricityUsageInput) else { return }
             guard let carbonIntensity = Double(carbonIntensityInput) else { return }
             
-            print("Total footprint before = \(cfCalculator.totalFootprint)") //before
-            let footprint = cfCalculator.calculateElectricityFootprint(totalElectricityUsage: electrictyUsage, carbonIntensityOfLocalGrid: carbonIntensity)
-            cfCalculator.updateTotalFootprint(value: footprint)
-            print("Total footprint after = \(cfCalculator.totalFootprint)") // After
+            let footprint = carbonFootprintData.calculateEnergyEmission(totalEnergyConsumption: electrictyUsage, carbonInstensityOfLocalGrid: carbonIntensity)
+            
+            carbonFootprintData.addCarbonFootprint(type: .energy, emissionValue: footprint, frequencyType: .nonRegular)
+            
+            carbonFootprintData.displayFootprint()
+            
             calculatorView.displayCalculatorMenu()
+            
         } else {
             print("Invalid input [else block]")
         }
-    }
-    
-    func calcTransfoot() {
-        
-        let view = CFCalculatorView()
-        
-        if let selectedMode = view.promptForTransportationMode() {
-            switch selectedMode {
-            case .car:
-                captureTransportInput(modeOfTransportation: .car)
-            case .motorcycle:
-                captureTransportInput(modeOfTransportation: .motorcycle)
-            case .publicTransport:
-                captureTransportInput(modeOfTransportation: .publicTransport)
-            case .walking:
-                print("Handle walking")
-            case .cycling:
-                print("Handle cycling")
-            case .airTravel:
-                captureTransportInput(modeOfTransportation: .airTravel)
-            case .none:
-                view.displayCalculatorMenu()
-            }
-        } else {
-            print("Invalid input")
-            calcTransfoot()
-        }
-        
     }
     
 }

@@ -34,17 +34,44 @@ struct CFCalculatorView {
         
     }
     
-    func promptForTransportationMode() -> TransportationType? {
+    func promptForTransportationMode() -> TransportData.TransportType? {
         
         print("Choose the transportation mode:")
+        print("1. Car")
+        print("2. Motorcycle")
+        print("3. PublicTransport")
+        print("4. walking")
+        print("5. Cycling")
+        print("6. AirTravel")
         
-        for mode in TransportationType.allCases {
+        /*for mode in TransportData.TransportType.allCases {
             print("- \(mode.rawValue)")
-        }
+        }*/
         
         print("Enter your choice:")
-        if let input = readLine() {
-            return TransportationType(rawValue: input)
+        
+        if let input = readLine(), let inputInInt = Int(input) {
+            return TransportData.TransportType(rawValue: inputInInt)
+        }
+        
+        return nil
+        
+    }
+    
+    func promptForFrequencyType() -> CarbonFootprintData.FootprintFrequency? {
+        
+        print("Travel frequency - (Select an option!)")
+        print("1. Regular")
+        print("2. Non regular")
+        
+        /*for mode in CarbonFootprintData.FootprintFrequency.allCases {
+            print("> \(mode.rawValue)")
+        }*/
+        
+        print("Enter your choice:")
+        
+        if let input = readLine(), let inputInInt = Int(input) {
+            return CarbonFootprintData.FootprintFrequency(rawValue: inputInInt)
         }
         
         return nil

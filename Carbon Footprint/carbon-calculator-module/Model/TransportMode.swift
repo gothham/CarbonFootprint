@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TransportMode {
+class TransportMode {
     
     let name: String
     
@@ -16,5 +16,12 @@ struct TransportMode {
     let frequency: Int
     
     let averageDistance: Double
+    
+    init(name: String, value: Double, frequency: Int, averageDistance: Double) {
+        self.name = name
+        self.value = value
+        self.frequency = frequency
+        self.averageDistance = averageDistance
+    }
     
 }

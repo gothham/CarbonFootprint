@@ -10,11 +10,12 @@ import Foundation
 struct CarbonFootprint {
     
     let footprintId: Int
-    
+
     let activityType: Activity
-    
+
     let emission: Double
-    
+
     let transportationMode: TransportationType
+
     
 }

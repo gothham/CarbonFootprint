@@ -13,6 +13,11 @@
 		550DDAC92A2F19FB007F6B72 /* TransportationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550DDAC82A2F19FB007F6B72 /* TransportationType.swift */; };
 		550DDACB2A2F43E9007F6B72 /* ModeOfTransportMileage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550DDACA2A2F43E9007F6B72 /* ModeOfTransportMileage.swift */; };
 		550DDACD2A2F570F007F6B72 /* TransportMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550DDACC2A2F570F007F6B72 /* TransportMode.swift */; };
+		550DDAD22A3062E8007F6B72 /* TransportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550DDAD12A3062E8007F6B72 /* TransportData.swift */; };
+		550DDAD42A30631A007F6B72 /* EnergyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550DDAD32A30631A007F6B72 /* EnergyData.swift */; };
+		550DDAD62A306357007F6B72 /* CarbonFootprintData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550DDAD52A306357007F6B72 /* CarbonFootprintData.swift */; };
+		550DDADB2A30A41F007F6B72 /* EmissionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550DDADA2A30A41F007F6B72 /* EmissionType.swift */; };
+		550DDADD2A31AC0E007F6B72 /* RCarbonFootprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550DDADC2A31AC0E007F6B72 /* RCarbonFootprint.swift */; };
 		550E229D2A0B67770047A491 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E229C2A0B67770047A491 /* main.swift */; };
 		554625D12A0CCB2C0029A1C9 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625D02A0CCB2C0029A1C9 /* MenuOption.swift */; };
 		554625D52A0CCB9E0029A1C9 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625D42A0CCB9E0029A1C9 /* MenuController.swift */; };
@@ -35,7 +40,6 @@
 		55B2E55C2A0B9E2200E28469 /* CarbonCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E55A2A0B9E2200E28469 /* CarbonCoreData.xcdatamodeld */; };
 		55B2E55E2A0BA1C100E28469 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E55D2A0BA1C100E28469 /* DataController.swift */; };
 		55B2E56A2A0BAD9E00E28469 /* CarbonFootprintEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E5692A0BAD9E00E28469 /* CarbonFootprintEntry.swift */; };
-		55B2E56E2A0BAE3700E28469 /* CarbonFootprintData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E56D2A0BAE3700E28469 /* CarbonFootprintData.swift */; };
 		55B2E5702A0BAE8E00E28469 /* CarbonFootprintCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E56F2A0BAE8E00E28469 /* CarbonFootprintCategory.swift */; };
 		55B2E5732A0BC32000E28469 /* InitialConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E5722A0BC32000E28469 /* InitialConsoleView.swift */; };
 		55B2E57B2A0BCC6E00E28469 /* ViewFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E57A2A0BCC6E00E28469 /* ViewFlow.swift */; };
@@ -69,6 +73,11 @@
 		550DDAC82A2F19FB007F6B72 /* TransportationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportationType.swift; sourceTree = "<group>"; };
 		550DDACA2A2F43E9007F6B72 /* ModeOfTransportMileage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeOfTransportMileage.swift; sourceTree = "<group>"; };
 		550DDACC2A2F570F007F6B72 /* TransportMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportMode.swift; sourceTree = "<group>"; };
+		550DDAD12A3062E8007F6B72 /* TransportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportData.swift; sourceTree = "<group>"; };
+		550DDAD32A30631A007F6B72 /* EnergyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyData.swift; sourceTree = "<group>"; };
+		550DDAD52A306357007F6B72 /* CarbonFootprintData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFootprintData.swift; sourceTree = "<group>"; };
+		550DDADA2A30A41F007F6B72 /* EmissionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmissionType.swift; sourceTree = "<group>"; };
+		550DDADC2A31AC0E007F6B72 /* RCarbonFootprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCarbonFootprint.swift; sourceTree = "<group>"; };
 		550E22992A0B67770047A491 /* Carbon Footprint */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Carbon Footprint"; sourceTree = BUILT_PRODUCTS_DIR; };
 		550E229C2A0B67770047A491 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		554625D02A0CCB2C0029A1C9 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
@@ -92,7 +101,6 @@
 		55B2E55B2A0B9E2200E28469 /* CarbonCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarbonCoreData.xcdatamodel; sourceTree = "<group>"; };
 		55B2E55D2A0BA1C100E28469 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		55B2E5692A0BAD9E00E28469 /* CarbonFootprintEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFootprintEntry.swift; sourceTree = "<group>"; };
-		55B2E56D2A0BAE3700E28469 /* CarbonFootprintData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFootprintData.swift; sourceTree = "<group>"; };
 		55B2E56F2A0BAE8E00E28469 /* CarbonFootprintCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFootprintCategory.swift; sourceTree = "<group>"; };
 		55B2E5722A0BC32000E28469 /* InitialConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialConsoleView.swift; sourceTree = "<group>"; };
 		55B2E57A2A0BCC6E00E28469 /* ViewFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFlow.swift; sourceTree = "<group>"; };
@@ -143,6 +151,26 @@
 				550246C02A14BDED0091D796 /* MenuLogicView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		550DDAD02A3062BC007F6B72 /* RefinedDataModal */ = {
+			isa = PBXGroup;
+			children = (
+				550DDAD32A30631A007F6B72 /* EnergyData.swift */,
+				550DDAD12A3062E8007F6B72 /* TransportData.swift */,
+				550DDAD52A306357007F6B72 /* CarbonFootprintData.swift */,
+				550DDAD92A3066DB007F6B72 /* EnumTypes */,
+				550DDADC2A31AC0E007F6B72 /* RCarbonFootprint.swift */,
+			);
+			path = RefinedDataModal;
+			sourceTree = "<group>";
+		};
+		550DDAD92A3066DB007F6B72 /* EnumTypes */ = {
+			isa = PBXGroup;
+			children = (
+				550DDADA2A30A41F007F6B72 /* EmissionType.swift */,
+			);
+			path = EnumTypes;
 			sourceTree = "<group>";
 		};
 		550E22902A0B67770047A491 = {
@@ -206,6 +234,7 @@
 		5579A80C2A13B38B00DF19B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				550DDAD02A3062BC007F6B72 /* RefinedDataModal */,
 				5579A80E2A13B41C00DF19B5 /* CarbonFootprintCalculator.swift */,
 				55D1B8B42A1B2C65000A8346 /* CarbonFootprint.swift */,
 				55D1B8B62A1B2D58000A8346 /* Activity.swift */,
@@ -341,7 +370,6 @@
 			children = (
 				55B2E5692A0BAD9E00E28469 /* CarbonFootprintEntry.swift */,
 				55B2E56F2A0BAE8E00E28469 /* CarbonFootprintCategory.swift */,
-				55B2E56D2A0BAE3700E28469 /* CarbonFootprintData.swift */,
 				554625D62A0CE8CF0029A1C9 /* CarbonFootprintModel.swift */,
 			);
 			path = "carbon-footprint-model";
@@ -462,14 +490,17 @@
 				55D1B8AD2A177C0F000A8346 /* OffsetManager.swift in Sources */,
 				554625D52A0CCB9E0029A1C9 /* MenuController.swift in Sources */,
 				550246C12A14BDED0091D796 /* MenuLogicView.swift in Sources */,
+				550DDAD62A306357007F6B72 /* CarbonFootprintData.swift in Sources */,
 				554625D72A0CE8CF0029A1C9 /* CarbonFootprintModel.swift in Sources */,
 				554625DB2A0D14430029A1C9 /* CFCalculatorOption.swift in Sources */,
 				550246BB2A14BC8E0091D796 /* LoginOption.swift in Sources */,
+				550DDADD2A31AC0E007F6B72 /* RCarbonFootprint.swift in Sources */,
 				55D1B8B92A1B2E8A000A8346 /* FootprintConstant.swift in Sources */,
 				550DDACB2A2F43E9007F6B72 /* ModeOfTransportMileage.swift in Sources */,
 				55B2E5512A0B70B900E28469 /* LogicView.swift in Sources */,
 				55D1B8B52A1B2C65000A8346 /* CarbonFootprint.swift in Sources */,
 				55B2E57B2A0BCC6E00E28469 /* ViewFlow.swift in Sources */,
+				550DDAD42A30631A007F6B72 /* EnergyData.swift in Sources */,
 				55B2E5532A0B72CE00E28469 /* LoginController.swift in Sources */,
 				55B2E54F2A0B707900E28469 /* User.swift in Sources */,
 				554625E02A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift in Sources */,
@@ -485,8 +516,9 @@
 				55D1B8AF2A177CAD000A8346 /* CarbonCredit.swift in Sources */,
 				550246B92A14B2C90091D796 /* UserInteraction.swift in Sources */,
 				55854C612A0E12F400D00A88 /* CredentialController.swift in Sources */,
-				55B2E56E2A0BAE3700E28469 /* CarbonFootprintData.swift in Sources */,
 				55B19C642A1E43A400402D03 /* AddGoalController.swift in Sources */,
+				550DDADB2A30A41F007F6B72 /* EmissionType.swift in Sources */,
+				550DDAD22A3062E8007F6B72 /* TransportData.swift in Sources */,
 				55D1B8A72A175A3D000A8346 /* CFOffsetView.swift in Sources */,
 				55B2E5702A0BAE8E00E28469 /* CarbonFootprintCategory.swift in Sources */,
 				550DDACD2A2F570F007F6B72 /* TransportMode.swift in Sources */,
