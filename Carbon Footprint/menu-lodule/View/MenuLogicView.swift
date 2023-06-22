@@ -14,13 +14,14 @@ class MenuLogicView {
         
         let appName = "CO\u{2082}e"
         print("|--------------------------------|")
-        print("|    Welcome to the \(appName) app.    |")
+        print("| Welcome to the \(appName) app. |    |")
         print("|--------------------------------|")
         print("> 0. Exit")
         print("> 1. Calculate carbon footprint.")
         print("> 2. Offset carbon footprint.")
         print("> 3. Manage goals.")
         print("> 4. Log out")
+        print("> 5. Renewed goals.")
         print("- Please select an option.")
         getUserInput()
     }

@@ -52,6 +52,8 @@ struct CFCalculatorView {
         
         if let input = readLine(), let inputInInt = Int(input) {
             return TransportData.TransportType(rawValue: inputInInt)
+        } else {
+            
         }
         
         return nil
@@ -76,6 +78,21 @@ struct CFCalculatorView {
         
         return nil
         
+    }
+    
+    func prompUpdateGoalProgress() -> GoalProgressCategory? {
+        
+        print("Do you want to update any of the given goal?")
+        print("1. Yes")
+        print("2. No")
+        
+        print("Enter your choice")
+        
+        if let input = readLine(), let choice = Int(input) {
+            return GoalProgressCategory(rawValue: choice)
+        }
+        
+        return GoalProgressCategory.doNotUpdate
     }
     
 }

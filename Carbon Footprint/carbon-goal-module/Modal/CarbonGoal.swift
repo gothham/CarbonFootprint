@@ -9,14 +9,11 @@ import Foundation
 
 class CarbonGoal {
     
-    let cfCalculator = CarbonFootprintCalculator()
-    
-    var goals: [Goal] = [/*Montero*/]
+    var goals: [Goal] = []
     
     var nextGoalId: Int = 0
     
     func addGoal(description: String, targetEmissionReduction: Double, type: GoalMenuView.GoalType) {
-        
         let goalId = getGoalId()
         
         let goal = Goal(id: goalId, type: type, progress: 0, targetEmissionReduction: targetEmissionReduction, description: description, targetLeft: targetEmissionReduction)
@@ -24,12 +21,11 @@ class CarbonGoal {
         goals.append(goal)
         
         func getGoalId() -> Int{
-            
             var currentId = nextGoalId
             currentId += 1
             nextGoalId = currentId
-            return currentId
             
+            return currentId
         }
 
     }
@@ -40,7 +36,6 @@ class CarbonGoal {
     
     
     func displayAllGoal() {
-        
         guard !goals.isEmpty else {
             print("No active goals.")
             return
@@ -49,36 +44,28 @@ class CarbonGoal {
         for goal in goals {
             print("(Goal ID: \(goal.id), Type: \(goal.type), Progress: \(goal.progress)%, Target Emission Reduction: \(goal.targetEmissionReduction),Description: \(goal.description), Target Left: \(goal.targetLeft))")
         }
-        
     }
     
     func fetchGoal(withId goalId: Int) -> Goal? {
-        
         return goals.first(where: { $0.id == goalId})
-        
     }
     
     // Method for updating the progress 
-    func udpateGoalProgress(index: Int, reductionValue: Double) {
-        
+    func updateGoalProgress(index: Int, reductionValue: Double) {
         if let index = goals.firstIndex(where: {$0.id == index}) {
             goals[index].updateProgress(with: reductionValue)
         }
         
-        cfCalculator.reduceTotalFootprint(with: reductionValue)
-            
+        CarbonFootprintData.shared.reduceTotalFootprint(with: reductionValue)
     }
     
     func checkForActiveGoal() -> Bool {
         // return true if the array is empty
         return !goals.isEmpty
-        
     }
     
     func displayExplicitGoal(goal: Goal) {
-        
-        print("(Goal ID: \(goal.id), Type: \(goal.type), Progress: \(goal.progress)%, Target Emission Reduction: \(goal.targetEmissionReduction),Description: \(goal.description), Target Left: \(goal.targetLeft))")
-        
+        print("(Goal ID: \(goal.id), Type: \(goal.type), Progress: \(goal.progress)%, Target Emission Reduction: \(goal.targetEmissionReduction), Description: \(goal.description), Target Left: \(goal.targetLeft))")
     }
     
 }

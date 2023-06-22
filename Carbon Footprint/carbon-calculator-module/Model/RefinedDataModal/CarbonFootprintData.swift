@@ -9,6 +9,10 @@ import Foundation
 
 class CarbonFootprintData {
     
+    static let shared = CarbonFootprintData()
+    
+    private init() {}
+    
     enum FootprintFrequency: Int, CaseIterable {
         
         case regular = 1
@@ -17,34 +21,20 @@ class CarbonFootprintData {
         
     }
     
-    var transportationData: TransportData?
+//    var totalFootprint: Double = 0.0
     
-    var energyUsage: EnergyData?
+    var carbonCreditLimit: Double = 100_000_000.0
+    
+    var totalFooprintInMetricTon: Double = 0.0
     
     var nextFootprintId: Int = 1
     
     var footprints: [RCarbonFootprint] = [] // storage area for footprints
-    
-    
-    /*var totalFootprint: Double {
-     
-     let transportEmissions = calculateTransportationEmission()
-     let energyEmissions = calculateEnergyEmission()
-     
-     return transportEmissions + energyEmissions
-     
-     }*/
-    
-    /*init(transportationData: TransportData, energyUsage: EnergyData) {
-     self.transportationData = transportationData
-     self.energyUsage = energyUsage
-     }*/
-    
-    
+        
     // MARK: Methods to calculate carbon footprint
+    
     // method to calculate transportation footprint
     func calculateTransportationEmission(distance: Double, transportMode: TransportData.TransportType, frequency: Int, frequencyType: FootprintFrequency) -> Double {
-        
         var fuelConsumption: Double = 0.0
         
         let fuelEfficiency = ModeOfTransportMileage()
@@ -55,20 +45,26 @@ class CarbonFootprintData {
         switch transportMode {
         case .car:
             fuelConsumption = distance * fuelEfficiency.carMileage
+            
         case .motorcycle:
             fuelConsumption = distance * fuelEfficiency.motorcycleMileage
+            
         case .publicTransport:
             fuelConsumption = distance * fuelEfficiency.publicTransportMileage
+            
         case .walking:
             print("Walking haha, 0 mileage bruh!")
+            
         case .cycling:
             print("Use brains... You dumbass!")
+            
         case .airTravel:
             fuelConsumption = distance * fuelEfficiency.airTravelMileage
         }
         
         // Calcualting the carbon footprint depending upon frequency type
         /// Formula is footprint = distance * emission factor * fuel consumed for the trip
+        ///
         switch frequencyType {
         case .regular:
             carbonFootprint = distance * FootprintConstant.shared.publicEmissionFactor * fuelConsumption
@@ -78,21 +74,17 @@ class CarbonFootprintData {
         }
         
         return carbonFootprint
-        
     }
     
     func calculateEnergyEmission(totalEnergyConsumption energyUsed: Double, carbonInstensityOfLocalGrid carbonIntensity: Double) -> Double {
-        
         let carbonFootprint = energyUsed * carbonIntensity
         
         return carbonFootprint
-        
     }
     
     // MARK: Method to add carbon footprint
     
     func addCarbonFootprint(type emissionType: EmissionType, emissionValue: Double, frequencyType: FootprintFrequency) {
-        
         let footprintId = getNextFootprintId()
         
         let carbonFootprint: RCarbonFootprint
@@ -108,6 +100,7 @@ class CarbonFootprintData {
                 carbonFootprint = RCarbonFootprint(footprintId: footprintId, emissionValue: emissionValue, majorActivityType: emissionType)
                 footprints.append(carbonFootprint)
             }
+            
         case .energy:
             carbonFootprint = RCarbonFootprint(footprintId: footprintId, emissionValue: emissionValue, majorActivityType: emissionType)
             footprints.append(carbonFootprint)
@@ -121,9 +114,17 @@ class CarbonFootprintData {
         }
     }
     
+    // Method to get the current footprint
+    func getCurrentFootprintId() -> Int {
+        
+        return nextFootprintId - 1
+        
+    }
+    
     // MARK: Method to display added footprints.
     
     func displayFootprint() {
+        
         guard !footprints.isEmpty else {
             print("No active footprints!")
             return
@@ -135,4 +136,47 @@ class CarbonFootprintData {
         
     }
     
+    // MARK: Method for updating the total footprint
+    
+    /*func updateTotalFootprint(emissionValue value: Double) {
+        
+        totalFootprint += value
+        
+        totalFooprintInMetricTon = convertToTon(emissionValueInTons: totalFootprint)
+        
+        displayTotalFootprint()
+        
+    }*/
+    
+    func displayTotalFootprint() {
+        print("Total footprint in metric tonne is \(totalFooprintInMetricTon) metric ton of Co2.")
+        
+        print("Total footprint is \(RCarbonFootprint.totalFootprint) kg of Co2.")
+    }
+    
+    func convertToTon(emissionValueInTons value: Double) -> Double {
+        let metricTon = value / 1000 // converting to metric tonne
+        
+        return metricTon
+    }
+    
+    // MARK: Methods for updating
+    func fetchFootprint(footprintId id: Int) -> RCarbonFootprint? {
+        
+        return footprints.first(where: { $0.footprintId == id})
+        
+    }
+    
+    func updateProgressUsingFootprint(footprintId: Int, goalId: Int) {
+        guard let footprint = fetchFootprint(footprintId: footprintId) else { return } // fetching the required footprint
+        
+        AddGoalController.shared.carbonGoal.updateGoalProgress(index: goalId, reductionValue: footprint.emissionValue)
+        AddGoalController.shared.carbonGoal.displayAllGoal()
+    }
+    
+    func reduceTotalFootprint(with value: Double) {
+        
+        RCarbonFootprint.totalFootprint -= value
+        print("Total footprint = \(RCarbonFootprint.totalFootprint)")
+    }
 }

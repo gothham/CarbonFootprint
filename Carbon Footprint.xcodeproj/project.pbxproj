@@ -25,6 +25,9 @@
 		554625DB2A0D14430029A1C9 /* CFCalculatorOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625DA2A0D14430029A1C9 /* CFCalculatorOption.swift */; };
 		554625DD2A0D15760029A1C9 /* Co2eCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625DC2A0D15760029A1C9 /* Co2eCalculatorController.swift */; };
 		554625E02A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554625DF2A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift */; };
+		556F28AB2A3C31E20053BFA3 /* CarbonOffsetFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F28AA2A3C31E20053BFA3 /* CarbonOffsetFlowController.swift */; };
+		556F28AF2A3C33FE0053BFA3 /* GoalConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F28AE2A3C33FE0053BFA3 /* GoalConsoleView.swift */; };
+		556F28B72A3C3A050053BFA3 /* RevampedCarbonCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F28B62A3C3A050053BFA3 /* RevampedCarbonCredit.swift */; };
 		5579A80F2A13B41C00DF19B5 /* CarbonFootprintCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579A80E2A13B41C00DF19B5 /* CarbonFootprintCalculator.swift */; };
 		5579A8112A13B86300DF19B5 /* CFCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579A8102A13B86300DF19B5 /* CFCalculatorView.swift */; };
 		5579A8142A13B95200DF19B5 /* CalculatorCategoryOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579A8132A13B95200DF19B5 /* CalculatorCategoryOption.swift */; };
@@ -52,6 +55,9 @@
 		55D1B8B72A1B2D58000A8346 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B8B62A1B2D58000A8346 /* Activity.swift */; };
 		55D1B8B92A1B2E8A000A8346 /* FootprintConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B8B82A1B2E8A000A8346 /* FootprintConstant.swift */; };
 		55D1B8BB2A1B9FE1000A8346 /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B8BA2A1B9FE1000A8346 /* ActivityType.swift */; };
+		55DCA5822A375294008A4DF2 /* FootprintValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DCA5812A375294008A4DF2 /* FootprintValidation.swift */; };
+		55DCA5842A3756F8008A4DF2 /* GoalProgressCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DCA5832A3756F8008A4DF2 /* GoalProgressCategory.swift */; };
+		55FAAE6D2A41861F00E58DED /* CarbonOffsetCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FAAE6C2A41861F00E58DED /* CarbonOffsetCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,6 +92,9 @@
 		554625DA2A0D14430029A1C9 /* CFCalculatorOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFCalculatorOption.swift; sourceTree = "<group>"; };
 		554625DC2A0D15760029A1C9 /* Co2eCalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Co2eCalculatorController.swift; sourceTree = "<group>"; };
 		554625DF2A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFCarbonFootprinCalcModel.swift; sourceTree = "<group>"; };
+		556F28AA2A3C31E20053BFA3 /* CarbonOffsetFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonOffsetFlowController.swift; sourceTree = "<group>"; };
+		556F28AE2A3C33FE0053BFA3 /* GoalConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalConsoleView.swift; sourceTree = "<group>"; };
+		556F28B62A3C3A050053BFA3 /* RevampedCarbonCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevampedCarbonCredit.swift; sourceTree = "<group>"; };
 		5579A80E2A13B41C00DF19B5 /* CarbonFootprintCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFootprintCalculator.swift; sourceTree = "<group>"; };
 		5579A8102A13B86300DF19B5 /* CFCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFCalculatorView.swift; sourceTree = "<group>"; };
 		5579A8132A13B95200DF19B5 /* CalculatorCategoryOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCategoryOption.swift; sourceTree = "<group>"; };
@@ -113,6 +122,9 @@
 		55D1B8B62A1B2D58000A8346 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		55D1B8B82A1B2E8A000A8346 /* FootprintConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootprintConstant.swift; sourceTree = "<group>"; };
 		55D1B8BA2A1B9FE1000A8346 /* ActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
+		55DCA5812A375294008A4DF2 /* FootprintValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootprintValidation.swift; sourceTree = "<group>"; };
+		55DCA5832A3756F8008A4DF2 /* GoalProgressCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalProgressCategory.swift; sourceTree = "<group>"; };
+		55FAAE6C2A41861F00E58DED /* CarbonOffsetCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonOffsetCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +172,6 @@
 				550DDAD12A3062E8007F6B72 /* TransportData.swift */,
 				550DDAD52A306357007F6B72 /* CarbonFootprintData.swift */,
 				550DDAD92A3066DB007F6B72 /* EnumTypes */,
-				550DDADC2A31AC0E007F6B72 /* RCarbonFootprint.swift */,
 			);
 			path = RefinedDataModal;
 			sourceTree = "<group>";
@@ -169,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				550DDADA2A30A41F007F6B72 /* EmissionType.swift */,
+				55DCA5832A3756F8008A4DF2 /* GoalProgressCategory.swift */,
 			);
 			path = EnumTypes;
 			sourceTree = "<group>";
@@ -192,6 +204,7 @@
 		550E229B2A0B67770047A491 /* Carbon Footprint */ = {
 			isa = PBXGroup;
 			children = (
+				556F28A62A3C31420053BFA3 /* revamped-goal-module */,
 				5579A8122A13B93D00DF19B5 /* Constants */,
 				55B19C5B2A1E1FF900402D03 /* carbon-goal-module */,
 				55D1B8A22A175608000A8346 /* carbon-offset-module */,
@@ -211,6 +224,41 @@
 				554625DF2A0D17120029A1C9 /* CFCarbonFootprinCalcModel.swift */,
 			);
 			path = "calculator-module";
+			sourceTree = "<group>";
+		};
+		556F28A62A3C31420053BFA3 /* revamped-goal-module */ = {
+			isa = PBXGroup;
+			children = (
+				556F28A92A3C31750053BFA3 /* Modal */,
+				556F28A82A3C316E0053BFA3 /* View */,
+				556F28A72A3C316B0053BFA3 /* Controller */,
+			);
+			path = "revamped-goal-module";
+			sourceTree = "<group>";
+		};
+		556F28A72A3C316B0053BFA3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				556F28AA2A3C31E20053BFA3 /* CarbonOffsetFlowController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		556F28A82A3C316E0053BFA3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				556F28AE2A3C33FE0053BFA3 /* GoalConsoleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		556F28A92A3C31750053BFA3 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				556F28B62A3C3A050053BFA3 /* RevampedCarbonCredit.swift */,
+				55FAAE6C2A41861F00E58DED /* CarbonOffsetCalculator.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		5579A80A2A13B36800DF19B5 /* carbon-calculator-module */ = {
@@ -234,6 +282,7 @@
 		5579A80C2A13B38B00DF19B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				550DDADC2A31AC0E007F6B72 /* RCarbonFootprint.swift */,
 				550DDAD02A3062BC007F6B72 /* RefinedDataModal */,
 				5579A80E2A13B41C00DF19B5 /* CarbonFootprintCalculator.swift */,
 				55D1B8B42A1B2C65000A8346 /* CarbonFootprint.swift */,
@@ -261,6 +310,7 @@
 				5579A8132A13B95200DF19B5 /* CalculatorCategoryOption.swift */,
 				550246B82A14B2C90091D796 /* UserInteraction.swift */,
 				550246BA2A14BC8E0091D796 /* LoginOption.swift */,
+				55DCA5812A375294008A4DF2 /* FootprintValidation.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -454,7 +504,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					550E22982A0B67770047A491 = {
 						CreatedOnToolsVersion = 14.2;
@@ -496,6 +546,7 @@
 				550246BB2A14BC8E0091D796 /* LoginOption.swift in Sources */,
 				550DDADD2A31AC0E007F6B72 /* RCarbonFootprint.swift in Sources */,
 				55D1B8B92A1B2E8A000A8346 /* FootprintConstant.swift in Sources */,
+				55DCA5842A3756F8008A4DF2 /* GoalProgressCategory.swift in Sources */,
 				550DDACB2A2F43E9007F6B72 /* ModeOfTransportMileage.swift in Sources */,
 				55B2E5512A0B70B900E28469 /* LogicView.swift in Sources */,
 				55D1B8B52A1B2C65000A8346 /* CarbonFootprint.swift in Sources */,
@@ -508,12 +559,15 @@
 				55D1B8A92A175DB9000A8346 /* OffsetOption.swift in Sources */,
 				5579A80F2A13B41C00DF19B5 /* CarbonFootprintCalculator.swift in Sources */,
 				5579A8112A13B86300DF19B5 /* CFCalculatorView.swift in Sources */,
+				556F28AF2A3C33FE0053BFA3 /* GoalConsoleView.swift in Sources */,
 				554625DD2A0D15760029A1C9 /* Co2eCalculatorController.swift in Sources */,
 				55D1B8B72A1B2D58000A8346 /* Activity.swift in Sources */,
 				554625D12A0CCB2C0029A1C9 /* MenuOption.swift in Sources */,
 				55B19C6A2A1E44FE00402D03 /* GoalMenuView.swift in Sources */,
 				55D1B8BB2A1B9FE1000A8346 /* ActivityType.swift in Sources */,
 				55D1B8AF2A177CAD000A8346 /* CarbonCredit.swift in Sources */,
+				55DCA5822A375294008A4DF2 /* FootprintValidation.swift in Sources */,
+				556F28AB2A3C31E20053BFA3 /* CarbonOffsetFlowController.swift in Sources */,
 				550246B92A14B2C90091D796 /* UserInteraction.swift in Sources */,
 				55854C612A0E12F400D00A88 /* CredentialController.swift in Sources */,
 				55B19C642A1E43A400402D03 /* AddGoalController.swift in Sources */,
@@ -521,6 +575,7 @@
 				550DDAD22A3062E8007F6B72 /* TransportData.swift in Sources */,
 				55D1B8A72A175A3D000A8346 /* CFOffsetView.swift in Sources */,
 				55B2E5702A0BAE8E00E28469 /* CarbonFootprintCategory.swift in Sources */,
+				556F28B72A3C3A050053BFA3 /* RevampedCarbonCredit.swift in Sources */,
 				550DDACD2A2F570F007F6B72 /* TransportMode.swift in Sources */,
 				5579A8162A14A3E500DF19B5 /* CFCalculatorController.swift in Sources */,
 				55B19C602A1E20F800402D03 /* CarbonGoal.swift in Sources */,
@@ -528,6 +583,7 @@
 				550DDAC92A2F19FB007F6B72 /* TransportationType.swift in Sources */,
 				55B2E56A2A0BAD9E00E28469 /* CarbonFootprintEntry.swift in Sources */,
 				55B2E55C2A0B9E2200E28469 /* CarbonCoreData.xcdatamodeld in Sources */,
+				55FAAE6D2A41861F00E58DED /* CarbonOffsetCalculator.swift in Sources */,
 				55D1B8AB2A175E12000A8346 /* CFOffsetController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +624,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -628,6 +685,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -652,6 +710,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VVZ8G92URG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -663,6 +722,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VVZ8G92URG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

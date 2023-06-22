@@ -8,5 +8,7 @@
 import Foundation
 
 enum EmissionType {
+    
     case transport, energy
+    
 }

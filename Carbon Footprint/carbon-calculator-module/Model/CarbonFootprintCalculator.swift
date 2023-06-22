@@ -82,7 +82,7 @@ class CarbonFootprintCalculator {
         
         addCarbonFootprint(activityType: .transportation, emission: carbonFootprint, modeOfTransportation: modeOfTransport)
         
-        displayFootprint()
+        disFoot()
         
         return carbonFootprint
         
@@ -91,7 +91,7 @@ class CarbonFootprintCalculator {
     func calculateElectricityFootprint(totalElectricityUsage: Double, carbonIntensityOfLocalGrid: Double) -> Double{
         let carbonFootprint = totalElectricityUsage * carbonIntensityOfLocalGrid
         addCarbonFootprint(activityType: .electricity, emission: carbonFootprint, modeOfTransportation: .none)
-        displayFootprint()
+        disFoot()
         return carbonFootprint
     }
     
@@ -122,7 +122,7 @@ class CarbonFootprintCalculator {
     }
     
     // MARK: Display footprints
-    func displayFootprint() {
+    func disFoot() {
         
         guard footprints.count > 0 else {
             print("No footprints data.")
@@ -134,13 +134,5 @@ class CarbonFootprintCalculator {
         }
         
     }
-    
-    func reduceTotalFootprint(with value: Double) {
-        
-        totalFootprint -= value
-        print("Total footprint = \(totalFootprint)")
-    }
-    
-    
 }
 

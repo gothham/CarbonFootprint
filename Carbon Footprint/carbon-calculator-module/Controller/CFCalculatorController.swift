@@ -4,7 +4,7 @@
 //
 //  Created by doss-zstch1212 on 17/05/23.
 //
-
+// TODO: uncomment the below code for updating the goal
 import Foundation
 
 class CFCalculatorController {
@@ -12,11 +12,9 @@ class CFCalculatorController {
     // Singleton class
     static let shared = CFCalculatorController()
     
+    private init() {}
+    
     // MARK: Instances.
-    
-    let cfCalculator = CarbonFootprintCalculator()
-    
-    let carbonFootprintData = CarbonFootprintData()
     
     let view = CFCalculatorView()
     
@@ -25,7 +23,6 @@ class CFCalculatorController {
     func handleUserInputForType(option: ActivityTypeOption) {
         
         let showMainMenu = MenuLogicView()
-        let calculatorView = CFCalculatorView()
         
         switch option {
         case .transportation:
@@ -37,8 +34,8 @@ class CFCalculatorController {
         case .household:
             print("Selected household.")
         case .displayFootprint:
-            cfCalculator.displayFootprint()
-            calculatorView.displayCalculatorMenu()
+            CarbonFootprintData.shared.displayFootprint()
+            view.displayCalculatorMenu()
         case .other:
             print("Selected other.")
         case .back:
@@ -51,41 +48,67 @@ class CFCalculatorController {
     }
     
     func navigateTransportMode(frequencyType: CarbonFootprintData.FootprintFrequency) {
-        
-        let view = CFCalculatorView()
-        
         if let selectedMode = view.promptForTransportationMode() {
             switch selectedMode {
             case .car:
                 captureTransportInput(modeOfTransportation: .car, frequencyType: frequencyType)
+                
             case .motorcycle:
                 captureTransportInput(modeOfTransportation: .motorcycle, frequencyType: frequencyType)
+                
             case .publicTransport:
                 captureTransportInput(modeOfTransportation: .publicTransport, frequencyType: frequencyType)
+                
             case .walking:
                 print("Handle walking")
+                
             case .cycling:
                 print("Handle cycling")
+                
             case .airTravel:
                 captureTransportInput(modeOfTransportation: .airTravel, frequencyType: frequencyType)
             }
         } else {
             print("Invalid input")
+            view.displayCalculatorMenu()
         }
-        
+    }
+    
+    func navigateUpdateGoalProgress() {
+        if let selectedMode = view.prompUpdateGoalProgress() {
+            switch selectedMode {
+            case .update:
+                print("Hello world")
+                
+            case .doNotUpdate:
+                print("Again hello world")
+            }
+        }
     }
     
     
     func navigateFrequencyMode() {
-        
-        let view = CFCalculatorView()
-        
         if let selectedMode = view.promptForFrequencyType() {
             switch selectedMode {
             case .regular:
                 navigateTransportMode(frequencyType: .regular)
+                
             case .nonRegular:
                 navigateTransportMode(frequencyType: .nonRegular)
+            }
+        } else {
+            navigateFrequencyMode()
+        }
+    }
+    
+    func navigateUpdateGoal() {
+        if let selectedMode = view.prompUpdateGoalProgress() {
+            switch selectedMode {
+            case .update:
+                captureGoalId()
+                
+            case .doNotUpdate:
+                view.displayCalculatorMenu()
             }
         }
     }
@@ -94,9 +117,7 @@ class CFCalculatorController {
     // MARK: methods for capturing user inputs.
     
     func captureTransportInput(modeOfTransportation type: TransportData.TransportType, frequencyType: CarbonFootprintData.FootprintFrequency) {
-        
         let userInteraction = UserInteraction()
-        let calculatorView = CFCalculatorView()
         let footprint: Double
         
         switch frequencyType {
@@ -108,23 +129,22 @@ class CFCalculatorController {
                 guard let frequency = Int(frequencyInput) else { return }
                 guard let distance = Double(distanceInput) else { return }
                 
-                footprint = carbonFootprintData.calculateTransportationEmission(distance: distance, transportMode: type, frequency: frequency, frequencyType: .regular)
-                carbonFootprintData.addCarbonFootprint(type: .transport, emissionValue: footprint, frequencyType: frequencyType)
-                
+                footprint = CarbonFootprintData.shared.calculateTransportationEmission(distance: distance, transportMode: type, frequency: frequency, frequencyType: .regular)
+                CarbonFootprintData.shared.addCarbonFootprint(type: .transport, emissionValue: footprint, frequencyType: frequencyType)
+//                navigateUpdateGoal()
+                CarbonFootprintData.shared.displayFootprint()   
             } else {
-                
                 print("Invalid input")
-                
             }
         case .nonRegular:
-            print("Inside nonregular capture input method.")
             if let distanceInput = userInteraction.promptMessage(message: "|Enter distance travelled (in Km):") {
                 
                 guard let distance = Double(distanceInput) else { return }
                 
-                footprint = carbonFootprintData.calculateTransportationEmission(distance: distance, transportMode: type, frequency: 1, frequencyType: .nonRegular)
-                carbonFootprintData.addCarbonFootprint(type: .transport, emissionValue: footprint, frequencyType: frequencyType)
-                
+                footprint = CarbonFootprintData.shared.calculateTransportationEmission(distance: distance, transportMode: type, frequency: 1, frequencyType: .nonRegular)
+                CarbonFootprintData.shared.addCarbonFootprint(type: .transport, emissionValue: footprint, frequencyType: frequencyType)
+//                navigateUpdateGoal()
+                CarbonFootprintData.shared.displayFootprint()
             } else {
                 
                 print("Invalid input")
@@ -133,16 +153,12 @@ class CFCalculatorController {
             
         }
         
-        // Displaying footprints.
-        carbonFootprintData.displayFootprint()
-        
-        calculatorView.displayCalculatorMenu()
-        
+        print("Total footprint = \(RCarbonFootprint.totalFootprint)")
+        view.displayCalculatorMenu()
     }
 
     func captureElectricityInput() {
         let userInteraction = UserInteraction()
-        let calculatorView = CFCalculatorView()
         
         if let electricityUsageInput = userInteraction.promptMessage(message: "Enter total electricity usage (in kWh)."),
         let carbonIntensityInput = userInteraction.promptMessage(message: "Enter the carbon intensity of local grid (in kg CO2/kWh)") {
@@ -150,22 +166,38 @@ class CFCalculatorController {
             guard let electrictyUsage = Double(electricityUsageInput) else { return }
             guard let carbonIntensity = Double(carbonIntensityInput) else { return }
             
-            let footprint = carbonFootprintData.calculateEnergyEmission(totalEnergyConsumption: electrictyUsage, carbonInstensityOfLocalGrid: carbonIntensity)
+            let footprint = CarbonFootprintData.shared.calculateEnergyEmission(totalEnergyConsumption: electrictyUsage, carbonInstensityOfLocalGrid: carbonIntensity)
             
-            carbonFootprintData.addCarbonFootprint(type: .energy, emissionValue: footprint, frequencyType: .nonRegular)
+            CarbonFootprintData.shared.addCarbonFootprint(type: .energy, emissionValue: footprint, frequencyType: .nonRegular)
             
-            carbonFootprintData.displayFootprint()
+            //navigateUpdateGoal()
             
-            calculatorView.displayCalculatorMenu()
+            CarbonFootprintData.shared.displayFootprint()
             
+            view.displayCalculatorMenu()
         } else {
             print("Invalid input [else block]")
         }
     }
     
+    func captureGoalId() {
+        
+        let userInteraction = UserInteraction()
+        
+        if let goalId = userInteraction.promptMessage(message: "Enter the goal id:"), let selectedGoal = Int(goalId) {
+            let currentFootprint = CarbonFootprintData.shared.getCurrentFootprintId()
+            print("Current footprint id = \(currentFootprint)")
+            CarbonFootprintData.shared.displayFootprint()
+            CarbonFootprintData.shared.updateProgressUsingFootprint(footprintId: currentFootprint, goalId: selectedGoal)
+            AddGoalController.shared.carbonGoal.displayAllGoal()
+        } else {
+            print("Invalid input ig?!")
+        }
+    }
+    
 }
 
-
+// MARK: Enum to choose the calculator menu (May remove in the future while switching to UI app).
 enum  ActivityTypeOption: Int{
     
     case transportation = 1
@@ -178,4 +210,5 @@ enum  ActivityTypeOption: Int{
     case zelda = 44
     
 }
+
 

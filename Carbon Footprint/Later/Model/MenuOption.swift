@@ -13,6 +13,7 @@ enum MenuOption: Int {
     case carbonOffset = 2
     case manageGoal = 3
     case logOut = 4
+    case renewedMenu = 5
     case exit = 0
     
 }

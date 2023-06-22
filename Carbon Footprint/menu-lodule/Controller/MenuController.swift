@@ -10,11 +10,11 @@ import Foundation
 class MenuController {
     
     let carbonFootprintModel = CFCarbonFootprinCalcModel()
-    let calculatorController = CFCalculatorController()
     let cfCalcualtorView = CFCalculatorView()
     let loginController = LoginController()
     let offsetView = CFOffsetView()
     let goalMenuView = GoalMenuView()
+    let goalConsoleView = GoalConsoleView()
     
     func handleUserInput(selectedOption option: MenuOption) {
         
@@ -33,6 +33,9 @@ class MenuController {
             loginController.displayLoginMenu()
         case .manageGoal:
             goalMenuView.showGoalMenu()
+        case .renewedMenu:
+            print("Redirecting to new goal menu.")
+            goalConsoleView.captureUserInputForMenu()
         }
     }
     
