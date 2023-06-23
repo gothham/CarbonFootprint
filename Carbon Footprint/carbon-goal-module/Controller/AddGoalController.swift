@@ -22,17 +22,20 @@ class AddGoalController {
     // MARK: - Public Methods
     
     /// Captures user input for adding a new goal.
-    func captureInputForAddingGoal(type: GoalMenuView.GoalType) {
+    func handleGoalInputAndAddGoal(type: GoalMenuView.GoalType) {
         let getUserInput = UserInteraction()
         let goalMenuView = GoalMenuView()
         
         if let description = getUserInput.promptMessage(message: "Enter the description:"),
            let targetReductionValueInput = getUserInput.promptMessage(message: "Enter the target emission value to set target:") {
             
-            guard let targetReductionValue = Double(targetReductionValueInput) else { return }
+            guard let targetReductionValue = Double(targetReductionValueInput) else {
+                goalMenuView.showGoalMenu()
+                return
+            }
             
             carbonGoal.addGoal(description: description, targetEmissionReduction: targetReductionValue, type: type)
-            carbonGoal.displayAllGoal()
+            carbonGoal.displayAllGoals()
             goalMenuView.showGoalMenu()
         } else {
             print("Invalid input!")
@@ -46,13 +49,13 @@ class AddGoalController {
         let getUserInput = UserInteraction()
         
         // Providing an early exit if there are no goals.
-        guard carbonGoal.checkForActiveGoal() else {
+        guard carbonGoal.checkForActiveGoals() else {
             print("No active goals found!")
             goalMenuView.showGoalMenu()
             return
         }
         
-        carbonGoal.displayAllGoal()
+        carbonGoal.displayAllGoals()
         
         if let indexInput = getUserInput.promptMessage(message: "Enter goal id:") {
             // Safely convert `indexInput` to an integer value using optional binding.
@@ -65,7 +68,7 @@ class AddGoalController {
             
             guard let result = carbonGoal.fetchGoal(withId: input) else {
                 print("No goals found! Try giving the index correctly.")
-                carbonGoal.displayAllGoal()
+                carbonGoal.displayAllGoals()
                 goalMenuView.showGoalMenu()
                 return
             }
@@ -84,7 +87,7 @@ class AddGoalController {
         let goalMenuView = GoalMenuView()
         let getUserInput = UserInteraction()
         
-        guard carbonGoal.checkForActiveGoal() == true else {
+        guard carbonGoal.checkForActiveGoals() == true else {
             print("No active goals found!")
             goalMenuView.showGoalMenu()
             return
@@ -103,9 +106,9 @@ class AddGoalController {
                 return
             }
             
-            carbonGoal.updateGoalProgress(index: input, reductionValue: reductionValue)
+            carbonGoal.updateGoalProgress(goalId: input, reductionValue: reductionValue)
             
-            carbonGoal.displayAllGoal()
+            carbonGoal.displayAllGoals()
             goalMenuView.showGoalMenu()
         } else {
             print("Invalid input!")
@@ -120,22 +123,22 @@ class AddGoalController {
         
         switch option {
         case .transportation:
-            captureInputForAddingGoal(type: .transportation)
+            handleGoalInputAndAddGoal(type: .transportation)
             
         case .diet:
-            captureInputForAddingGoal(type: .diet)
+            handleGoalInputAndAddGoal(type: .diet)
             
         case .electricity:
-            captureInputForAddingGoal(type: .electricity)
+            handleGoalInputAndAddGoal(type: .electricity)
             
         case .household:
-            captureInputForAddingGoal(type: .household)
+            handleGoalInputAndAddGoal(type: .household)
             
         case .other:
-            captureInputForAddingGoal(type: .other)
+            handleGoalInputAndAddGoal(type: .other)
             
         case .displayAllGoals:
-            carbonGoal.displayAllGoal()
+            carbonGoal.displayAllGoals()
             goalMenu.showGoalMenu()
             
         case .fetchGoal:
