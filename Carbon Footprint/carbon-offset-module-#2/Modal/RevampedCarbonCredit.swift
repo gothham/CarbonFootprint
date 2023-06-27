@@ -13,6 +13,6 @@ class RevampedCarbonCredit {
     
     let priceForOneCredit: Int = 2000 ///INR
     
-    var bougthCarbonCredits: Double = 0
+    var boughtCarbonCredits: Double = 0
     
 }

@@ -3,7 +3,6 @@
 //  Carbon Footprint
 //
 //  Created by doss-zstch1212 on 11/05/23.
-//  puttu paattu :)
 
 import Foundation
 
@@ -14,7 +13,7 @@ class MenuController {
     let loginController = LoginController()
     let offsetView = CFOffsetView()
     let goalMenuView = GoalMenuView()
-    let goalConsoleView = GoalConsoleView()
+//    let offsetController = CarbonOffsetFlowController()
     
     func handleUserInput(selectedOption option: MenuOption) {
         
@@ -33,9 +32,8 @@ class MenuController {
             loginController.displayLoginMenu()
         case .manageGoal:
             goalMenuView.showGoalMenu()
-        case .renewedMenu:
-            print("Redirecting to new goal menu.")
-            goalConsoleView.captureUserInputForMenu()
+        case .offset:
+            CarbonOffsetFlowController.shared.navigateOffsetMenuOption()
         }
     }
     

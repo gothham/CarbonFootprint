@@ -12,7 +12,6 @@ class LoginController {
 //    let credentialController = CredentialController()
     
     func loginUser() {
-        let menuLogicView = MenuLogicView()
         let logicView = LogicView()
         
         while !CredentialController.shared.isLoggedIn {
@@ -24,7 +23,7 @@ class LoginController {
                     CredentialController.shared.isLoggedIn = true
                     CredentialController.shared.setUserLoggedIn(user: user)
                     // Taking user to menu...
-                    menuLogicView.displayMenuOption()
+                    MenuLogicView.shared.displayMenuOption()
                 } else {
                     logicView.displayInputErrorMessage()
                 }

@@ -21,7 +21,19 @@ struct Goal {
             return
         }
         
-        progress = (emissionValue / targetEmissionReduction) * 100
-        targetLeft = targetEmissionReduction - emissionValue
+        progress += (emissionValue / targetEmissionReduction) * 100
+        targetLeft -= max(targetEmissionReduction - emissionValue, 0)
     }
+    
+    /*mutating func updateProgress(with emissionValue: Double) {
+        guard emissionValue <= targetEmissionReduction else {
+            print("Larger than target emission!")
+            return
+        }
+        
+        let updatedProgress = (emissionValue / targetEmissionReduction) * 100
+        progress += max(progress, updatedProgress) // Update progress only if the new value is higher
+        
+        targetLeft = max(targetEmissionReduction - emissionValue, 0) // Ensure targetLeft is never negative
+    }*/
 }

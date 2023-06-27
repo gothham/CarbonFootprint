@@ -18,31 +18,39 @@ enum ActivityTypeOption: Int {
 }
 
 class CFCalculatorController {
+    
     static let shared = CFCalculatorController()
+    
     private init() {}
     
     let view = CFCalculatorView()
     
     func handleUserInputForType(option: ActivityTypeOption) {
-        let showMainMenu = MenuLogicView()
         
         switch option {
         case .transportation:
             navigateFrequencyMode()
+            
         case .diet:
             print("Selected diet.")
+            
         case .electricity:
             captureElectricityInput()
+            
         case .household:
             print("Selected household.")
+            
         case .displayFootprint:
             CarbonFootprintData.shared.displayFootprint()
             view.displayCalculatorMenu()
+            
         case .other:
             print("Selected other.")
+            
         case .back:
             print("Selected go back.")
-            showMainMenu.displayMenuOption()
+            MenuLogicView.shared.displayMenuOption()
+            
         case .zelda:
             print("Oxytocin making it all okay...")
         }
@@ -98,6 +106,7 @@ class CFCalculatorController {
         if let selectedMode = view.prompUpdateGoalProgress() {
             switch selectedMode {
             case .update:
+                AddGoalController.shared.carbonGoal.displayAllGoals()
                 captureGoalId()
             case .doNotUpdate:
                 return

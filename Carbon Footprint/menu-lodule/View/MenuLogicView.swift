@@ -9,7 +9,15 @@ import Foundation
 
 class MenuLogicView {
     
-    // MARK: Change the menu options here
+    // MARK: - Singleton class
+    
+    // Singleton class
+    static let shared = MenuLogicView()
+    
+    private init() {}
+    
+    // MARK: - Public methods.
+    // Change the menu options here
     func displayMenuOption() {
         
         let appName = "CO\u{2082}e"
@@ -18,23 +26,22 @@ class MenuLogicView {
         print("|--------------------------------|")
         print("> 0. Exit")
         print("> 1. Calculate carbon footprint.")
-        print("> 2. Offset carbon footprint.")
+        print("> 2. Offset Carbon footprint.")
         print("> 3. Manage goals.")
-        print("> 4. Log out")
-        print("> 5. Renewed goals.")
+        print("> 4. Offset carbon footprint.")
+        print("> 5. Log out")
         print("- Please select an option.")
         getUserInput()
     }
     
     func getUserInput() {
         
-        let carbonFootprintController = MenuController()
+        let menuController = MenuController()
         if let input = readLine(),let userInput = Int(input), let option = MenuOption(rawValue: userInput) {
-            carbonFootprintController.handleUserInput(selectedOption: option)
+            menuController.handleUserInput(selectedOption: option)
         } else {
             print("Invalid input! Please try again.")
             displayMenuOption()
         }
-        
     }
 }

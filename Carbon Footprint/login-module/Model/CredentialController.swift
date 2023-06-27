@@ -26,7 +26,6 @@ class CredentialController {
     }
     
     func getAllCredentials() -> [User] {
-        
         var allCredentials: [User] = []
         
         for (username, password) in credentials {
@@ -35,24 +34,20 @@ class CredentialController {
         }
         
         return allCredentials
-        
     }
     
     func verifyCredentials(verifyUser user: User) -> Bool {
-        
         guard let storedUser = credentials[user.username] else { return false }
         
         return storedUser == user.password
-        
     }
     
     func setUserLoggedIn(user: User) {
         loggedInUser = user
     }
-    
-    // TODO: Change password
+
     func changePassword(user: User) {
-        
+        // TODO: Change password
     }
     
     func prepareLogOut() {

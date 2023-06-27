@@ -11,7 +11,6 @@ class CFOffsetController {
     
     static let shared = CFOffsetController()
     
-    let menuLogicView = MenuLogicView()
     let offsetManager = OffsetManager()
     let userInteraction = UserInteraction()
     
@@ -36,7 +35,7 @@ class CFOffsetController {
         case .back:
             // TODO: Take the user back.
             print("Wanna go back?")
-            menuLogicView.displayMenuOption()
+            MenuLogicView.shared.displayMenuOption()
         }
         
     }

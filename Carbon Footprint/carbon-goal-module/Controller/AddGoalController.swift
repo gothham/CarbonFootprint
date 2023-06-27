@@ -118,7 +118,7 @@ class AddGoalController {
     
     /// Handles user input for goal options.
     func handleUserInputForGoal(option: GoalMenuView.GoalType) {
-        let menuView = MenuLogicView()
+        
         let goalMenu = GoalMenuView()
         
         switch option {
@@ -148,7 +148,7 @@ class AddGoalController {
             handleUpdateProgressCase()
             
         case .goBack:
-            menuView.displayMenuOption()
+            MenuLogicView.shared.displayMenuOption()
         }
     }
 }

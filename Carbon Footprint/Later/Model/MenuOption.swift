@@ -10,10 +10,10 @@ import Foundation
 enum MenuOption: Int {
     
     case calculateCarbonFootprint = 1
-    case carbonOffset = 2
+    case offset = 2
     case manageGoal = 3
-    case logOut = 4
-    case renewedMenu = 5
+    case carbonOffset = 4
+    case logOut = 5
     case exit = 0
     
 }
